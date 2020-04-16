@@ -16,28 +16,32 @@ import com.superAdmin.productVo.ProductVo;
 public class AdminService {
 	@Autowired
 	private RestTemplate getRestTemplate;
+	@Autowired
+	private ProductListService productListService;
+	@Autowired
+	private ProductPriceService productPriceService;
 
-	@HystrixCommand(fallbackMethod="getFallBackMethod")
 	public List<ProductPriceDetails> getPriceOfProduct() {
 
-		ProductList listOfProduct = getRestTemplate
-				.getForObject("http://localhost:8081/admin/allProducthavingQuantitygreaterThan5", ProductList.class);
-
+		ProductList listOfProduct = productListService.getListOfProduct();
 		List<ProductPriceDetails> productPriceDetailsList = new ArrayList<>();
 
 		for (ProductVo productVo : listOfProduct.getProductList()) {
 			System.out.println("name:" + productVo.getProductName());
-			ProductPriceDetails productPriceDetails = getRestTemplate.getForObject(
-					"http://localhost:8080/product/viewproduct?name=" + productVo.getProductName(),
-					ProductPriceDetails.class);
+			ProductPriceDetails productPriceDetails = productPriceService.getPricedetails(productVo.getProductName());
 			productPriceDetailsList.add(productPriceDetails);
 		}
 		return productPriceDetailsList;
 	}
+
+
 	
-	public List<ProductPriceDetails>  getFallBackMethod(){
-		List<ProductPriceDetails> list=new ArrayList<>();
-		ProductPriceDetails details=new ProductPriceDetails();
+
+
+	// fallback method
+	public List<ProductPriceDetails> getFallBackMethod() {
+		List<ProductPriceDetails> list = new ArrayList<>();
+		ProductPriceDetails details = new ProductPriceDetails();
 		details.setPrice(0.00);
 		details.setProductId(0);
 		details.setProductName("");

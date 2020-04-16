@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.superAdmin.productVo.ProductList;
 import com.superAdmin.productVo.ProductPriceDetails;
 import com.superAdmin.productVo.ProductVo;
@@ -16,6 +17,7 @@ public class AdminService {
 	@Autowired
 	private RestTemplate getRestTemplate;
 
+	@HystrixCommand(fallbackMethod="getFallBackMethod")
 	public List<ProductPriceDetails> getPriceOfProduct() {
 
 		ProductList listOfProduct = getRestTemplate
@@ -31,6 +33,16 @@ public class AdminService {
 			productPriceDetailsList.add(productPriceDetails);
 		}
 		return productPriceDetailsList;
+	}
+	
+	public List<ProductPriceDetails>  getFallBackMethod(){
+		List<ProductPriceDetails> list=new ArrayList<>();
+		ProductPriceDetails details=new ProductPriceDetails();
+		details.setPrice(0.00);
+		details.setProductId(0);
+		details.setProductName("");
+		list.add(details);
+		return list;
 	}
 
 }

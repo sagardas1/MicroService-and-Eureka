@@ -39,6 +39,14 @@ public class AdminService {
 
 	public ProductList allProduct() {
 		ProductList list=getRestTemplate.getForObject("http://SHOPPING-CART/product/viewallproduct", ProductList.class);
+		
+		ProductList productList=getBuilder
+				.build()
+				.get()
+				.uri("",ProductList.class)
+				.retrieve()
+				.bodyToMono(ProductList.class)
+				.block();
 		return list;
 	}
 

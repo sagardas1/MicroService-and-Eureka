@@ -31,7 +31,7 @@ public class ProductController {
 
 		BaseResponce baseResponce = null;
 		try {
-			baseResponce=productService.insertProduct(productVo);
+			baseResponce=productService. insertProduct(productVo);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -88,7 +88,7 @@ public class ProductController {
 	public ProductPriceDetails viewProduct(@RequestParam String name) {
 		ProductPriceDetails product=null;
 		try {
-			product=productService.viewProduct(name);
+			product=productService .viewProduct(name);
 			
 		} catch (Exception e) {
 			System.out.println(e);

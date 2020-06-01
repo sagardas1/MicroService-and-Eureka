@@ -167,5 +167,10 @@ public class ProductService {
 		 
 	}
 	
+	public ProductPriceDetails deleteProduct(String name) {
+		return	productPriceDetailsDao.deleteProduct(name);
+		 
+	}
+	
 
 }

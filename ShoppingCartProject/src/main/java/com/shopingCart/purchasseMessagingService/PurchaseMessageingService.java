@@ -18,11 +18,11 @@ public class PurchaseMessageingService {
 	
 	
 		  // email ID of Recipient. 
-	      String recipient = "recipient@gmail.com"; 
+	      String recipient = "sagardas.195@gmail.com"; 
 	  
 	   
 	  
-	      // using host as localhost 
+	     
 	      String host = "127.0.0.1"; 
 	  
 	      // Getting system properties 

@@ -2,6 +2,7 @@ package com.shopingCart.productService;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.mail.Transport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ import com.shopingCart.productVo.Payment;
 import com.shopingCart.productVo.ProductPriceDetails;
 import com.shopingCart.productVo.ProductTransactions;
 import com.shopingCart.productVo.ProductVo;
+import com.shopingCart.purchasseMessagingService.MessageConstant;
+import com.shopingCart.purchasseMessagingService.PurchaseMessageingService;
 import com.shopingCart.responceConstants.ResponceConstants;
 import com.shopingCart.userDao.UserBasketDao;
 import com.shopingCart.userDao.UserDoa;
@@ -34,6 +37,8 @@ public class ProductService {
 	public ProductPriceDetailsDao productPriceDetailsDao;
 	@Autowired
 	public ProductTransactionsDao productTransactionsDao;
+	@Autowired
+	public PurchaseMessageingService purchaseMessageingService;
 
 	public BaseResponce insertProduct(ProductVo productVo) {
 		BaseResponce baseResponce = new BaseResponce();
@@ -155,6 +160,9 @@ public class ProductService {
 		productTransactionsDao.save(productTransactions);
 		basketInfo.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 		basketInfo.setStatusMessage(ResponceConstants.PAYMENT_SUCCESSFULL);
+		}
+		if(basketInfo.getStatusCode()==ResponceConstants.SUCCESS_CREATED) {
+			purchaseMessageingService.sendMessage(MessageConstant.PURCHASE_MESSAGE_SUBJECT, basketInfo.getEmail(), MessageConstant.PURCHASE_MESSAGE_TEXT);
 		}
 		
 		

@@ -163,7 +163,11 @@ public class ProductService {
 		}
 		if(basketInfo.getStatusCode()==ResponceConstants.SUCCESS_CREATED) {
 			purchaseMessageingService.sendMessage(MessageConstant.PURCHASE_MESSAGE_SUBJECT, basketInfo.getEmail(), MessageConstant.PURCHASE_MESSAGE_TEXT);
+			purchaseMessageingService.sendMessage(MessageConstant.PURCHASE_MESSAGE_SUBJECT, basketInfo.getEmail(), MessageConstant.LINK_FOR_WHATSAPP_UPDATE);
+			
 		}
+		
+		//whatsappIntegration pending.
 		
 		
 		

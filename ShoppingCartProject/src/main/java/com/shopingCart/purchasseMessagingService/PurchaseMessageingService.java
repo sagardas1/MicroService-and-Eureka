@@ -18,7 +18,7 @@ public class PurchaseMessageingService {
 	
 	
 		  // email ID of Recipient. 
-	      String recipient = "sagardas.195@gmail.com"; 
+	      String recipient = "recipient@gmail.com"; 
 	  
 	   
 	  

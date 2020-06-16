@@ -3,11 +3,13 @@ package com.admin.adminController;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.admin.adminService.AdminService;
@@ -17,13 +19,13 @@ import com.admin.productVo.ProductVo;
 import com.admin.userVo.RegistrationBulk;
 import com.admin.userVo.RegistrationVo;
 
-@RestController
+@Controller
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired(required=true)
 	public AdminService adminService;
 	
-	
+	@ResponseBody
 	@GetMapping(value="/getallUsers",headers="Accept=application/json")
 	public RegistrationBulk getAllCostumers(){
 		RegistrationBulk registrationBulk=adminService.getAllCostumers();
@@ -31,7 +33,7 @@ public class AdminController {
 		return registrationBulk;
 		
 	}
-	
+	@ResponseBody
 	@GetMapping(value="/allProduct",headers="Accept=application/json")
 	public ProductList allProduct(){
 		ProductList productList=adminService.allProduct();
@@ -39,6 +41,7 @@ public class AdminController {
 		return productList;
 		
 	}
+	@ResponseBody
 	@PostMapping(value="/insertProduct",headers="Accept=application/json")
 	public BaseResponce insertProduct(@RequestBody ProductVo product){
 		BaseResponce baseResponce=adminService.insertProduct(product);
@@ -46,7 +49,7 @@ public class AdminController {
 		return baseResponce;
 		
 	}
-	
+	@ResponseBody
 	@DeleteMapping(value="/deleteUser",headers="Accept=application/json")
 	public BaseResponce deleteUser(@RequestBody RegistrationVo registrationVo){
 		BaseResponce baseResponce=adminService.deleteUser(registrationVo);
@@ -54,6 +57,7 @@ public class AdminController {
 		return null;
 		
 	}
+	@ResponseBody
 	@GetMapping(value="/allProducthavingQuantitygreaterThan5",headers="Accept=application/json")
 	public ProductList allProducthavingQuantitygreaterThan5(){
 		ProductList productList=new ProductList();

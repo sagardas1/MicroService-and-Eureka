@@ -3,6 +3,7 @@ package com.admin.adminService;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,11 +70,13 @@ public class AdminService {
 		return list;
 	}
 	@PostConstruct
-	public void main() {
+	public void init() {
 		int a=20;
 		int b=30;
 		System.out.println(a+b);
 		
 	}
+	@PreDestroy
+	public void destroy() {}
 
 }

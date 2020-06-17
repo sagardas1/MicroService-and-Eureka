@@ -6,8 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
+@Data
+@Getter
+@Setter
 @Entity
 @Table(name="productTransactions")
 public class ProductTransactions  {
@@ -18,37 +24,6 @@ public class ProductTransactions  {
 	private double finalAmount;
 	private double paymentStatus;
 	private String email;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public double getAmountPaid() {
-		return amountPaid;
-	}
-	public void setAmountPaid(double amountPaid) {
-		this.amountPaid = amountPaid;
-	}
-	public double getFinalAmount() {
-		return finalAmount;
-	}
-	public void setFinalAmount(double finalAmount) {
-		this.finalAmount = finalAmount;
-	}
-	public double getPaymentStatus() {
-		return paymentStatus;
-	}
-	public void setPaymentStatus(double paymentStatus) {
-		this.paymentStatus = paymentStatus;
-	}
 	
 	
 

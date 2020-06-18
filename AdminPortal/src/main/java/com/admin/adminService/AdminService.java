@@ -42,7 +42,7 @@ public class AdminService {
 
 	public ProductList allProduct() {
 		ProductList list=getRestTemplate.getForObject("http://SHOPPING-CART/product/viewallproduct", ProductList.class);
-		
+	//	getRestTemplate.po
 		ProductList productList=getBuilder
 				.build()
 				.get()

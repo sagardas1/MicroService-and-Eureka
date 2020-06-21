@@ -3,6 +3,8 @@ package com.shopingCart.productService;
 import java.util.ArrayList;
 import java.util.List;
 import javax.mail.Transport;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,7 +42,15 @@ public class ProductService {
 	@Autowired
 	public PurchaseMessageingService purchaseMessageingService;
 
+	@Autowired
+	private EntityManager entityManager;
+	
 	public BaseResponce insertProduct(ProductVo productVo) {
+	Query query=	entityManager.createNativeQuery("Select * from userdetails where username=? and userlastname=?");
+	query.setParameter(1, "fhsbf").setParameter(2, "fhsdbh");
+	query.getResultList();
+	
+		
 		BaseResponce baseResponce = new BaseResponce();
 		ProductVo pro = productDao.getproductFromdb(productVo.getProductName());
 		if (pro != null) {

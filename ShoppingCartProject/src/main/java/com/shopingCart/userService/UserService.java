@@ -1,6 +1,7 @@
 package com.shopingCart.userService;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,11 @@ public class UserService {
 	public UserDoa userDao;
 	@Autowired(required = true)
 	public LoginDAO loginDAO;
-
+	
+	public static String OTP=null;
 	public BaseResponce userRegistration(RegistrationVo registration) {
 		BaseResponce baseResponce = new BaseResponce();
+		
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
@@ -88,6 +91,51 @@ public class UserService {
 			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);
 		} else {
+			baseResponce.setStatusCode(ResponceConstants.FAILED);
+			baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
+		}
+		return baseResponce;
+	}
+
+	public String sendOtP() {
+		 Random rand = new Random(); 
+		 double arandom=rand.nextDouble();
+		 String stringRaandom=Double.toString(arandom);
+		 stringRaandom=stringRaandom.substring(2, 8);
+		 OTP=stringRaandom;	
+		
+	return OTP;
+	}
+	
+	public static void main(String[] args) {
+
+		String baseResponce=null;
+		baseResponce="please insert valid price for this test";
+		try {
+			String a = "122";
+			a = (a.trim()).replace(",", "");
+			double b = Double.parseDouble(a);
+			
+			 Random rand = new Random(); 
+			 double arandom=rand.nextDouble();
+			 String stringRaandom=Double.toString(arandom);
+			 stringRaandom=stringRaandom.substring(2, 8);
+			 OTP=stringRaandom;	
+			 System.out.println(stringRaandom);
+			
+			
+			
+			}catch(Exception e) {
+			e.printStackTrace();
+			}
+	}
+
+	public BaseResponce checkOtp(String otp) {
+		BaseResponce baseResponce=new BaseResponce();
+		if(otp.equals(OTP)) {
+			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+			baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
+		}else {
 			baseResponce.setStatusCode(ResponceConstants.FAILED);
 			baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
 		}

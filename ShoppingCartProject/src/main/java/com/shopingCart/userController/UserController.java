@@ -51,5 +51,19 @@ public class UserController {
 		BaseResponce baseResponce=	userService.deleteRegistation(registrationVo);
 		return baseResponce;
 	}
+	@GetMapping(value="/sendOtP",headers="Accept=application/json")
+	public String sendOtP( ) {
+		
+		
+		return userService.sendOtP();
+	}
+	
+	@GetMapping(value="/checkOtp",headers="Accept=application/json")
+	public BaseResponce checkOtp(@RequestParam String otp ) {
+		
+		BaseResponce baseResponce=new BaseResponce();
+		baseResponce= userService.checkOtp(otp);
+		return baseResponce;
+	}
 
 }

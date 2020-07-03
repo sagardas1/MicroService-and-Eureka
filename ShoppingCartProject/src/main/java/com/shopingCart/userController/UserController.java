@@ -52,10 +52,10 @@ public class UserController {
 		return baseResponce;
 	}
 	@GetMapping(value="/sendOtP",headers="Accept=application/json")
-	public String sendOtP( ) {
+	public BaseResponce sendOtP(@RequestParam String email ) {
 		
 		
-		return userService.sendOtP();
+		return userService.sendOtP(email);
 	}
 	
 	@GetMapping(value="/checkOtp",headers="Accept=application/json")

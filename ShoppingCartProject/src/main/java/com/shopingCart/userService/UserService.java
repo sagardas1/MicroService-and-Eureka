@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shopingCart.baseResponce.BaseResponce;
+import com.shopingCart.purchasseMessagingService.PurchaseMessageingService;
 import com.shopingCart.responceConstants.ResponceConstants;
 import com.shopingCart.userDao.LoginDAO;
 import com.shopingCart.userDao.UserDoa;
@@ -21,6 +22,8 @@ public class UserService {
 	public UserDoa userDao;
 	@Autowired(required = true)
 	public LoginDAO loginDAO;
+	@Autowired
+	PurchaseMessageingService purchaseMessageingService;
 	
 	public static String OTP=null;
 	public BaseResponce userRegistration(RegistrationVo registration) {
@@ -97,14 +100,26 @@ public class UserService {
 		return baseResponce;
 	}
 
-	public String sendOtP() {
+	public BaseResponce sendOtP(String email) {
+		LoginVo loginVo=null;
+		BaseResponce baseResponce=new BaseResponce();
+		loginVo=	loginDAO.findUser(email);
+	if(loginVo!=null) {
 		 Random rand = new Random(); 
 		 double arandom=rand.nextDouble();
 		 String stringRaandom=Double.toString(arandom);
 		 stringRaandom=stringRaandom.substring(2, 8);
 		 OTP=stringRaandom;	
-		
-	return OTP;
+		 purchaseMessageingService.sendOTPinEmail(email, OTP);
+		 baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+			baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);
+			return baseResponce;
+	}else {
+		baseResponce.setStatusCode(ResponceConstants.FAILED);
+		baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
+		return baseResponce;
+	}
+	
 	}
 	
 	public static void main(String[] args) {

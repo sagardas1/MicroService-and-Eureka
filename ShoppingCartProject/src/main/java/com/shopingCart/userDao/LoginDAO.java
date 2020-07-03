@@ -26,6 +26,10 @@ public interface LoginDAO  extends CrudRepository<LoginVo,Long>{
 	@Modifying
 	@Query(value="DELETE FROM login WHERE  email=:email",nativeQuery=true)
 	int deleteLogin(@Param("email")String email);
+	
+	@Transactional
+	@Query(value="select * from login where email = :email",nativeQuery=true)
+	LoginVo findUser(@Param("email") String email);
 
 
 }

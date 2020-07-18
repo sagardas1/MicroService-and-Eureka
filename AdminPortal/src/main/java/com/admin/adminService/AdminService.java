@@ -54,9 +54,14 @@ public class AdminService {
 	}
 
 	public BaseResponce insertProduct(ProductVo product) {
+		try {
 		BaseResponce baseResponce=
 				getRestTemplate.postForObject("http://SHOPPING-CART/product/insertProduct", product, BaseResponce.class);
 		return baseResponce;
+		}catch(ArithmeticException | NullPointerException ee) {
+			ee.printStackTrace();
+		}
+		return null;
 	}
 
 	public BaseResponce deleteUser(RegistrationVo registrationVo) {

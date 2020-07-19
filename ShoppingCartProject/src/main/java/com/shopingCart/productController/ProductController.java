@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.constraints.Past;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -84,6 +85,19 @@ public class ProductController {
 		}
 		return basketInfo;
 	}
+	@DeleteMapping(value = "/payment", headers = "Accept=application/json")
+	public BaseResponce removeProductFromCart(@RequestBody UserBasket userBasket) {
+
+		BaseResponce baseResponce = null;
+		try {
+			baseResponce=productService. removeProductFromCart(userBasket);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return baseResponce;
+	
+	}
+	
 	@GetMapping(value = "/viewproduct", headers = "Accept=application/json")
 	public ProductPriceDetails viewProduct(@RequestParam String name) {
 		ProductPriceDetails product=null;

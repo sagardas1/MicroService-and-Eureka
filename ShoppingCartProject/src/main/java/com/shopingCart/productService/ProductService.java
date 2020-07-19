@@ -193,6 +193,11 @@ public class ProductService {
 		return	productPriceDetailsDao.deleteProduct(name);
 		 
 	}
+
+	public BaseResponce removeProductFromCart(UserBasket userBasket) {
+		userBasketDao.delete(userBasket);
+		return null;
+	}
 	
 
 }

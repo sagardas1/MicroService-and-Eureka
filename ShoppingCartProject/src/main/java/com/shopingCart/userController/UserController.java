@@ -65,5 +65,13 @@ public class UserController {
 		baseResponce= userService.checkOtp(otp);
 		return baseResponce;
 	}
+	
+	@DeleteMapping(value="/deleteUserPermanently",headers="Accept=application/json")
+	public BaseResponce deleteUserPermanently(@RequestBody RegistrationVo registration) {
+		
+		BaseResponce baseResponce=new BaseResponce();
+		baseResponce= userService.deleteUserPermanently(registration);
+		return baseResponce;
+	}
 
 }

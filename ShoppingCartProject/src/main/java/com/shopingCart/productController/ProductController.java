@@ -115,6 +115,16 @@ public class ProductController {
 		return name;
 	}
 	
-	
+	@GetMapping(value = "/vieworderdetails", headers = "Accept=application/json")
+	public List<ProductPriceDetails> vieworderdetails(@RequestParam String email) {
+		List<ProductPriceDetails> product=null;
+		try {
+			product=productService .vieworderdetails(email);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return product;
+	}
 	
 }

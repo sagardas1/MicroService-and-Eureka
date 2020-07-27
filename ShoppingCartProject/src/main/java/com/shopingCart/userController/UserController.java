@@ -30,7 +30,13 @@ public class UserController {
 		baseResponce=	userService.userRegistration(registration);
 		return baseResponce;
 	}
-	
+	@PostMapping(value="/updateuserregistration",headers="Accept=application/json")
+	public BaseResponce updateUserRegistration(@RequestBody RegistrationVo registration) {
+		BaseResponce baseResponce=null;
+		
+		baseResponce=	userService.updateUserRegistration(registration);
+		return baseResponce;
+	}
 	@GetMapping(value="/login",headers="Accept=application/json")
 	public BaseResponce login( @RequestParam String email,@RequestParam String password ) {
 		BaseResponce baseResponce=null;

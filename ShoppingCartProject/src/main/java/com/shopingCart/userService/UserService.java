@@ -24,11 +24,11 @@ public class UserService {
 	public LoginDAO loginDAO;
 	@Autowired
 	PurchaseMessageingService purchaseMessageingService;
-	
-	public static String OTP=null;
+
+	public static String OTP = null;
+
 	public BaseResponce userRegistration(RegistrationVo registration) {
 		BaseResponce baseResponce = new BaseResponce();
-		
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
@@ -101,56 +101,54 @@ public class UserService {
 	}
 
 	public BaseResponce sendOtP(String email) {
-		LoginVo loginVo=null;
-		BaseResponce baseResponce=new BaseResponce();
-		loginVo=	loginDAO.findUser(email);
-	if(loginVo!=null) {
-		 Random rand = new Random(); 
-		 double arandom=rand.nextDouble();
-		 String stringRaandom=Double.toString(arandom);
-		 stringRaandom=stringRaandom.substring(2, 8);
-		 OTP=stringRaandom;	
-		 purchaseMessageingService.sendOTPinEmail(email, OTP);
-		 baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+		LoginVo loginVo = null;
+		BaseResponce baseResponce = new BaseResponce();
+		loginVo = loginDAO.findUser(email);
+		if (loginVo != null) {
+			Random rand = new Random();
+			double arandom = rand.nextDouble();
+			String stringRaandom = Double.toString(arandom);
+			stringRaandom = stringRaandom.substring(2, 8);
+			OTP = stringRaandom;
+			purchaseMessageingService.sendOTPinEmail(email, OTP);
+			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);
 			return baseResponce;
-	}else {
-		baseResponce.setStatusCode(ResponceConstants.FAILED);
-		baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
-		return baseResponce;
+		} else {
+			baseResponce.setStatusCode(ResponceConstants.FAILED);
+			baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
+			return baseResponce;
+		}
+
 	}
-	
-	}
-	
+
 	public static void main(String[] args) {
 
-		String baseResponce=null;
-		baseResponce="please insert valid price for this test";
+		String baseResponce = null;
+		baseResponce = "please insert valid price for this test";
 		try {
 			String a = "122";
 			a = (a.trim()).replace(",", "");
 			double b = Double.parseDouble(a);
-			
-			 Random rand = new Random(); 
-			 double arandom=rand.nextDouble();
-			 String stringRaandom=Double.toString(arandom);
-			 stringRaandom=stringRaandom.substring(2, 8);
-			 OTP=stringRaandom;	
-			 System.out.println(stringRaandom);
-			
-			
-			
-			}catch(Exception e) {
+
+			Random rand = new Random();
+			double arandom = rand.nextDouble();
+			String stringRaandom = Double.toString(arandom);
+			stringRaandom = stringRaandom.substring(2, 8);
+			OTP = stringRaandom;
+			System.out.println(stringRaandom);
+
+		} catch (Exception e) {
 			e.printStackTrace();
-			}
+		}
 	}
 
 	public BaseResponce checkOtp(String otp) {
-		BaseResponce baseResponce=new BaseResponce();
-		if(otp.equals(OTP)) {
+		BaseResponce baseResponce = new BaseResponce();
+		if (otp.equals(OTP)) {
 			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
-		}else {
+		} else {
 			baseResponce.setStatusCode(ResponceConstants.FAILED);
 			baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
 		}
@@ -158,12 +156,45 @@ public class UserService {
 	}
 
 	public BaseResponce deleteUserPermanently(RegistrationVo registration) {
-		BaseResponce baseResponce=new BaseResponce();
+		BaseResponce baseResponce = new BaseResponce();
 		userDao.delete(registration);
 		baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 		baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);
-		
+
 		return baseResponce;
+	}
+
+	public BaseResponce updateUserRegistration(RegistrationVo registration) {
+		BaseResponce baseResponce = new BaseResponce();
+
+		try {
+
+			RegistrationVo regis = userDao.getUserRegistrationByEmail(registration.getEmail());
+			RegistrationVo update = new RegistrationVo();
+			update = regis;
+			if (regis != null) {
+
+				// roleId=1//users
+				// roleId=2 ,admin
+				regis.setRoleId(2);
+				regis.setConfirmPassword(registration.getConfirmPassword());
+				regis.setPassword(registration.getPassword());
+
+				userDao.delete(regis);
+				userDao.save(update);
+
+				baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+				baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
+			} else {
+				baseResponce.setStatusCode(ResponceConstants.FAILED);
+				baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return baseResponce;
+
 	}
 
 }

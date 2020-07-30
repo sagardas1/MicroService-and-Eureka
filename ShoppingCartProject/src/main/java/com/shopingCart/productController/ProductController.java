@@ -85,7 +85,7 @@ public class ProductController {
 		}
 		return basketInfo;
 	}
-	@DeleteMapping(value = "/payment", headers = "Accept=application/json")
+	@DeleteMapping(value = "/removeproductfromcart", headers = "Accept=application/json")
 	public BaseResponce removeProductFromCart(@RequestBody UserBasket userBasket) {
 
 		BaseResponce baseResponce = null;
@@ -122,7 +122,7 @@ public class ProductController {
 			product=productService .vieworderdetails(email);
 			
 		} catch (Exception e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		return product;
 	}

@@ -88,9 +88,11 @@ public class UserService {
 	public BaseResponce deleteRegistation(RegistrationVo registrationVo) {
 		BaseResponce baseResponce = null;
 		int deleteRegistration = userDao.deleteRegistation(registrationVo.getEmail());
-		int deleteLogin = loginDAO.deleteLogin(registrationVo.getEmail());
+		LoginVo loginVo=new LoginVo();
+		loginVo.setEmail(registrationVo.getEmail());
+		loginDAO.deleteLongin(loginVo.getEmail());
 		baseResponce = new BaseResponce();
-		if (deleteRegistration > 0 && deleteLogin > 0) {
+		if (deleteRegistration > 0) {
 			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);
 		} else {

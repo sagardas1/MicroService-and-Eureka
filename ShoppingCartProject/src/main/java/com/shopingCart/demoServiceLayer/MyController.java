@@ -28,6 +28,10 @@ public class MyController {
 		System.out.println("dfghj");
 		return "sagar";
 	}
-
+	@GetMapping(value="/param/{name}",headers="Accept=application/json")
+	public String param(@PathVariable String name) {
+		
+		return name;
+	}
 	
 }

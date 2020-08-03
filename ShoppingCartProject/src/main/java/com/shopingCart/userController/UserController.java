@@ -79,5 +79,13 @@ public class UserController {
 		baseResponce= userService.deleteUserPermanently(registration);
 		return baseResponce;
 	}
+	
+	@GetMapping(value="/deleteUserPermanently",headers="Accept=application/json")
+	public BaseResponce getUserAsPerId(@RequestBody RegistrationVo registration) {
+		
+		BaseResponce baseResponce=new BaseResponce();
+		baseResponce= userService.deleteUserPermanently(registration);
+		return baseResponce;
+	}
 
 }

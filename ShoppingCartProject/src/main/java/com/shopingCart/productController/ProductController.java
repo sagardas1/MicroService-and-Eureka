@@ -127,4 +127,16 @@ public class ProductController {
 		return product;
 	}
 	
+	@GetMapping(value = "/vieworderdetails", headers = "Accept=application/json")
+	public List<ProductPriceDetails> vieworderdetailsPerUser(@RequestParam String email) {
+		List<ProductPriceDetails> product=null;
+		try {
+			product=productService .vieworderdetails(email);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return product;
+	}
+	
 }

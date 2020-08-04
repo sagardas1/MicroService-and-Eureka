@@ -3,8 +3,10 @@ package com.shopingCart.userService;
 import java.util.List;
 import java.util.Random;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.shopingCart.baseResponce.BaseResponce;
 import com.shopingCart.purchasseMessagingService.PurchaseMessageingService;
@@ -14,7 +16,7 @@ import com.shopingCart.userDao.UserDoa;
 import com.shopingCart.userVo.LoginVo;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
-
+@Transactional
 @Service
 public class UserService {
 
@@ -27,6 +29,7 @@ public class UserService {
 
 	public static String OTP = null;
 
+	@Transactional
 	public BaseResponce userRegistration(RegistrationVo registration) {
 		BaseResponce baseResponce = new BaseResponce();
 
@@ -39,7 +42,10 @@ public class UserService {
 					// roleId=2 ,admin
 					registration.setRoleId(2);
 					userDao.save(registration);
+					
 					userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
+					Integer.parseInt("");
+					
 					baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 					baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
 				} else {

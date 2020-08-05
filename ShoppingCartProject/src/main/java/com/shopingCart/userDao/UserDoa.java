@@ -12,9 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import com.shopingCart.userVo.LoginVo;
 import com.shopingCart.userVo.RegistrationVo;
-
-@Repository
 @Transactional
+@Repository
 public interface UserDoa extends CrudRepository<RegistrationVo,Long>{
 	
 	@Transactional

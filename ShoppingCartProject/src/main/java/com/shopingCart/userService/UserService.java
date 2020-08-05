@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shopingCart.baseResponce.BaseResponce;
@@ -16,6 +17,7 @@ import com.shopingCart.userDao.UserDoa;
 import com.shopingCart.userVo.LoginVo;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
+
 @Transactional
 @Service
 public class UserService {
@@ -42,6 +44,7 @@ public class UserService {
 					// roleId=2 ,admin
 					registration.setRoleId(2);
 					userDao.save(registration);
+					
 					
 					userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
 					Integer.parseInt("");

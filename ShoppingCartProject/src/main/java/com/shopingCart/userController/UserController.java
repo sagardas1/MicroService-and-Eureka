@@ -16,6 +16,7 @@ import com.shopingCart.userService.UserService;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/user")
 public class UserController {

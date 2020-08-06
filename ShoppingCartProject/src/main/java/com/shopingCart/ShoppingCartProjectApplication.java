@@ -31,6 +31,7 @@ public class ShoppingCartProjectApplication {
 				.apiInfo(apiDetails());
 		
 	}
+	
 	@Bean
 	private static ApiInfo apiDetails() {
 		return new ApiInfo("Shopping Application", "Apis for Shopping-Cart. Copyright by Sagar Das", "Team", "sdbfhsd", "jsdbfj", "@void", "hsdbf");

@@ -8,8 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.shopingCart.productVo.ProductPriceDetails;
-import com.shopingCart.productVo.ProductVo;
-import com.shopingCart.userVo.LoginVo;
 @Repository
 @Transactional
 public interface ProductPriceDetailsDao  extends CrudRepository<ProductPriceDetails,Long>{

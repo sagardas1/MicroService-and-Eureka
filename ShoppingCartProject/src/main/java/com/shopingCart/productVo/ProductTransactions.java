@@ -6,8 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.shopingCart.userVo.RegistrationVo;
-
 @Entity
 @Table(name="productTransactions")
 public class ProductTransactions  {

@@ -1,6 +1,5 @@
 package com.shopingCart.purchasseMessagingService;
 
-import org.springframework.stereotype.Component;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -10,6 +9,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import org.springframework.stereotype.Component;
 
 @Component("purchaseMessageingService")
 public class PurchaseMessageingService {

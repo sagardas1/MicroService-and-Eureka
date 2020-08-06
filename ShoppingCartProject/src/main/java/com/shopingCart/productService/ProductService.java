@@ -2,7 +2,7 @@ package com.shopingCart.productService;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.mail.Transport;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 

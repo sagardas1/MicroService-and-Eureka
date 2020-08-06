@@ -5,6 +5,7 @@ import java.util.Collections;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -23,26 +24,15 @@ public class ShoppingCartProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingCartProjectApplication.class, args);
 	}
-
+	
+	@Bean
 	public Docket swaggerConfiguration() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.paths(PathSelectors.ant("/api/*"))
-				.apis(RequestHandlerSelectors.basePackage("sagar das"))
-				
-				.build()
+		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiDetails());
 		
 	}
-	
-	private ApiInfo apiDetails() {
-		return new ApiInfo(
-				"Shopping App",
-				"sample Api",
-				" 1.0", 
-				"free to use",
-				new springfox.documentation.service.Contact("SAGAR DAS", "WWW.VOID.COM", "SAGARDAS.195@GMAIL.COM"),
-				"hdsgf", 
-				"GVG",
-				Collections.emptyList());
+	@Bean
+	private static ApiInfo apiDetails() {
+		return new ApiInfo("Shopping Application", "Apis for Shopping-Cart. Copyright by Sagar Das", "Team", "sdbfhsd", "jsdbfj", "@void", "hsdbf");
 	}
 }

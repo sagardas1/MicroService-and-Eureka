@@ -23,5 +23,8 @@ public class MathUtills {
 	public int modulo(int a,int b) {
 		return a%b;
 	}
+	public double computeCircleArea(int radius) {
+		return Math.PI*radius*radius;
+	}
 }
 

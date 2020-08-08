@@ -7,11 +7,20 @@ import org.junit.jupiter.api.Test;
 class MathUtillsTest {
 
 	@Test
-	void test() {
-		MathUtills mathUtills =new MathUtills();
+	void testAdd() {
+		MathUtills mathUtills = new MathUtills();
+
+		assertEquals(2, mathUtills.add(1, 1), "should add two numbers");
+
+	}
+
 	
-	assertEquals(2, mathUtills.add(1, 1));
-	
-			}
+	@Test
+	void testCircleRadius() {
+		MathUtills mathUtills = new MathUtills();
+
+		assertEquals(Math.PI*10*10, mathUtills.computeCircleArea(10), "area of circle");
+
+	}
 
 }

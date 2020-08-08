@@ -8,6 +8,10 @@ class MathUtillsTest {
 
 	@Test
 	void test() {
-		System.out.println("this test run");	}
+		MathUtills mathUtills =new MathUtills();
+	
+	assertEquals(2, mathUtills.add(1, 1));
+	
+			}
 
 }

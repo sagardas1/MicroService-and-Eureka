@@ -22,5 +22,13 @@ class MathUtillsTest {
 		assertEquals(Math.PI*10*10, mathUtills.computeCircleArea(10), "area of circle");
 
 	}
+	@Test
+	void testdevide() {
+		
+		MathUtills mathUtills = new MathUtills();
+		assertThrows(NullPointerException.class, ()->mathUtills.div(1, 0),"devide by 0");
 
+
+
+	}
 }

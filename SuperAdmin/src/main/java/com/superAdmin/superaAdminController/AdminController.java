@@ -28,8 +28,6 @@ public class AdminController {
 
 	@GetMapping(value = "/getName/{name}", headers = "Accept=application/json")
 	public String name(@PathVariable(value="name")String name) {
-		
-
 		return name;
 	}
 }

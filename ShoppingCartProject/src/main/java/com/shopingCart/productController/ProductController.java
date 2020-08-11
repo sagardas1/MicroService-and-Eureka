@@ -136,5 +136,15 @@ public class ProductController {
 		}
 		return product;
 	}
-	
+	@GetMapping(value = "/viewProductWithQuanity", headers = "Accept=application/json")
+	public List<ProductPriceDetails> productListWithRespectToQuantity() {
+		List<ProductPriceDetails> product=null;
+		try {
+			product=productService .productListWithRespectToQuantity();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return product;
+	}
 }

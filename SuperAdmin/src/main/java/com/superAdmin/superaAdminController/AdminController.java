@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,4 +26,10 @@ public class AdminController {
 		return productList;
 	}
 
+	@GetMapping(value = "/getName/{name}", headers = "Accept=application/json")
+	public String name(@PathVariable(value="name")String name) {
+		
+
+		return name;
+	}
 }

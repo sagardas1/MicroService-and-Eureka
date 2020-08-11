@@ -133,11 +133,13 @@ public class UserService {
 
 	public static void main(String[] args) {
 
+		@SuppressWarnings("unused")
 		String baseResponce = null;
 		baseResponce = "please insert valid price for this test";
 		try {
 			String a = "122";
 			a = (a.trim()).replace(",", "");
+			@SuppressWarnings("unused")
 			double b = Double.parseDouble(a);
 
 			Random rand = new Random();

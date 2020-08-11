@@ -84,4 +84,9 @@ public class AdminService {
 	@PreDestroy
 	public void destroy() {}
 
+	public int deletePoduct(int productId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

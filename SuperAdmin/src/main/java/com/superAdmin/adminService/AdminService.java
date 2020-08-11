@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.superAdmin.productVo.ProductList;
 import com.superAdmin.productVo.ProductPriceDetails;
 import com.superAdmin.productVo.ProductVo;
 
 @Service
 public class AdminService {
+	@SuppressWarnings("unused")
 	@Autowired
 	private RestTemplate getRestTemplate;
 	@Autowired

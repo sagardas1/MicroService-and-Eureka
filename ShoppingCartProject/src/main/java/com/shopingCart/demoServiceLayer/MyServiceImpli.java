@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service("myServiceImpli")
 public class MyServiceImpli implements MyService{
+	@SuppressWarnings("unused")
 	@Autowired
 	private Reposi reposi;
 

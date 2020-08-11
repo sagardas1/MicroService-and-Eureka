@@ -204,5 +204,9 @@ public class ProductService {
 		return null;
 	}
 	
+	public List<ProductPriceDetails> productListWithRespectToQuantity(){
+		return null;
+	}
+	
 
 }

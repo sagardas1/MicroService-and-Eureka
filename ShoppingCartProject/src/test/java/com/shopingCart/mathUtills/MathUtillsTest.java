@@ -39,13 +39,11 @@ class MathUtillsTest {
 	void testCircleRadius() {
 
 		assertEquals(Math.PI * 10 * 10, mathUtills.computeCircleArea(10), "area of circle");
-if(1==1) {
-	fail();
-}
+
 	}
 
 	@Test
 	void testdevide() {
-
+		assertThrows(ArithmeticException.class, ()->mathUtills.div(10, 0),"divide by zero");
 	}
 }

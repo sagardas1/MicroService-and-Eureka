@@ -17,7 +17,7 @@ public class MathUtills {
 		return a * b;
 	}
 
-	public int div(int a, int b) throws ArithmeticException {
+	public int div(int a, int b) {
 		return a / b;
 	}
 

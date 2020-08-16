@@ -2,6 +2,7 @@ package com.admin.userVo;
 
 public class LoginVo {
 	
+	@SuppressWarnings("unused")
 	private long id;
 	private String email;
 	private String password;

@@ -43,7 +43,7 @@ public class AdminService {
 		ProductList list=getRestTemplate.getForObject("http://SHOPPING-CART/product/viewallproduct", ProductList.class);
 	//	getRestTemplate.po
 		@SuppressWarnings("unused")
-		ProductList productList=getBuilder
+		ProductList s=getBuilder
 				.build()
 				.get()
 				.uri("",ProductList.class)

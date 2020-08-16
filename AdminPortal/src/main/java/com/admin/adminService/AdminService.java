@@ -16,7 +16,6 @@ import com.admin.productVo.ProductList;
 import com.admin.productVo.ProductVo;
 import com.admin.userVo.RegistrationBulk;
 import com.admin.userVo.RegistrationVo;
-import com.netflix.discovery.DiscoveryClient;
 
 @Service
 public class AdminService {
@@ -43,6 +42,7 @@ public class AdminService {
 	public ProductList allProduct() {
 		ProductList list=getRestTemplate.getForObject("http://SHOPPING-CART/product/viewallproduct", ProductList.class);
 	//	getRestTemplate.po
+		@SuppressWarnings("unused")
 		ProductList productList=getBuilder
 				.build()
 				.get()

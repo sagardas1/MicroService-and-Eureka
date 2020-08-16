@@ -53,6 +53,7 @@ public class AdminController {
 	@ResponseBody
 	@DeleteMapping(value="/deleteUser",headers="Accept=application/json")
 	public BaseResponce deleteUser(@RequestBody RegistrationVo registrationVo){
+		@SuppressWarnings("unused")
 		BaseResponce baseResponce=adminService.deleteUser(registrationVo);
 		
 		return null;
@@ -77,6 +78,7 @@ public class AdminController {
 	@GetMapping(value="/deleteproduct",headers="Accept=application/json")
 	public int deletePoduct(@RequestParam int productId){
 		
+		@SuppressWarnings("unused")
 		int i=adminService.deletePoduct(productId);
 	
 		return 0;}

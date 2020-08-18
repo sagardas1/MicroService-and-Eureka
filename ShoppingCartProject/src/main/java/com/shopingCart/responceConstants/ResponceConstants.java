@@ -24,5 +24,8 @@ public class ResponceConstants {
 	//payment status
 	public static final int PAID = 1;
 	public static final int NOT_PAID = 0;
+	public static final int PAID_VIA= 2;
+	
+	
 	
 }

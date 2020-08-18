@@ -30,108 +30,108 @@ public class ProductController {
 
 		BaseResponce baseResponce = null;
 		try {
-			baseResponce=productService. insertProduct(productVo);
+			baseResponce = productService.insertProduct(productVo);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return baseResponce;
 	}
+
 	@GetMapping(value = "/viewallproduct", headers = "Accept=application/json")
 	public ProductList viewAllProduct() {
-		ProductList proList=new ProductList();
+		ProductList proList = new ProductList();
 		List<ProductVo> productList = null;
 		try {
-			productList=productService.viewAllProduct();
+			productList = productService.viewAllProduct();
 			proList.setProductList(productList);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return proList;
 	}
-	
+
 	@PostMapping(value = "/addToCart", headers = "Accept=application/json")
 	public BaseResponce addToCart(@RequestBody UserBasket userBasket) {
 
 		BaseResponce baseResponce = null;
 		try {
-			baseResponce=productService.addToCart(userBasket);
+			baseResponce = productService.addToCart(userBasket);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return baseResponce;
 	}
-	
+
 	@GetMapping(value = "/viewcart", headers = "Accept=application/json")
 	public BasketInfo viewCart(@RequestParam String email) {
 
 		BasketInfo basketInfo = null;
 		try {
-			basketInfo=productService.viewCart(email);
+			basketInfo = productService.viewCart(email);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return basketInfo;
 	}
-	
+
 	@PostMapping(value = "/payment", headers = "Accept=application/json")
 	public BasketInfo payment(@RequestBody BasketInfo basketInfo) {
 
 		try {
-			basketInfo=productService.payment(basketInfo);
+			basketInfo = productService.payment(basketInfo);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return basketInfo;
 	}
+
 	@DeleteMapping(value = "/removeproductfromcart", headers = "Accept=application/json")
 	public BaseResponce removeProductFromCart(@RequestBody UserBasket userBasket) {
 
 		BaseResponce baseResponce = null;
 		try {
-			baseResponce=productService. removeProductFromCart(userBasket);
+			baseResponce = productService.removeProductFromCart(userBasket);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return baseResponce;
-	
+
 	}
-	
+
 	@GetMapping(value = "/viewproduct", headers = "Accept=application/json")
 	public ProductPriceDetails viewProduct(@RequestParam String name) {
-		ProductPriceDetails product=null;
+		ProductPriceDetails product = null;
 		try {
-			product=productService .viewProduct(name);
-			
+			product = productService.viewProduct(name);
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		return product;
 	}
-	
 
-	
 	@GetMapping(value = "/vieworderdetails", headers = "Accept=application/json")
 	public List<ProductPriceDetails> vieworderdetails(@RequestParam String email) {
-		List<ProductPriceDetails> product=null;
+		List<ProductPriceDetails> product = null;
 		try {
-			product=productService .vieworderdetails(email);
-			
+			product = productService.vieworderdetails(email);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return product;
 	}
-	
+
 	@GetMapping(value = "/vieworderdetailsPerUser", headers = "Accept=application/json")
 	public List<ProductPriceDetails> vieworderdetailsPerUser(@RequestParam String email) {
-		List<ProductPriceDetails> product=null;
+		List<ProductPriceDetails> product = null;
 		try {
-			product=productService .vieworderdetails(email);
-			
+			product = productService.vieworderdetails(email);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return product;
 	}
-	
+
 }

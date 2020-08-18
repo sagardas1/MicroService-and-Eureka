@@ -108,10 +108,7 @@ public class ProductController {
 		return product;
 	}
 	
-	@GetMapping(value="/name",headers="Accept=application/json")
-	public String getName(@RequestParam(value="name",required=false,defaultValue="sdfg") String name) {
-		return name;
-	}
+
 	
 	@GetMapping(value = "/vieworderdetails", headers = "Accept=application/json")
 	public List<ProductPriceDetails> vieworderdetails(@RequestParam String email) {

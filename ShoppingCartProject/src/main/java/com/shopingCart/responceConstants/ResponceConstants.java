@@ -18,6 +18,7 @@ public class ResponceConstants {
 	public static final String FAILED_MESSAGE_LOGIN = "Incorrect email or password";
 	public static final String UPDATE = "Updated";
 	public static final String PAYMENT_SUCCESSFULL = "Payment Successfull";
+	public static final String PAYMENT_FAILED = "Payment Failed";
 	
 
 	

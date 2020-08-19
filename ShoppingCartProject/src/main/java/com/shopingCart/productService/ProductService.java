@@ -45,7 +45,7 @@ public class ProductService {
 	@Autowired
 	private EntityManager entityManager;
 	
-	public BaseResponce insertProduct(ProductVo productVo) {
+	public BaseResponce<Void> insertProduct(ProductVo productVo) {
 	Query query=	entityManager.createNativeQuery("Select * from userdetails where username=? and userlastname=?");
 	query.setParameter(1, "fhsbf").setParameter(2, "fhsdbh");
 	query.getResultList();

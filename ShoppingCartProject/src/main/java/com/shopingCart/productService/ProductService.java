@@ -194,7 +194,7 @@ public class ProductService {
 		 
 	}
 
-	public BaseResponce removeProductFromCart(UserBasket userBasket) {
+	public BaseResponce<Void> removeProductFromCart(UserBasket userBasket) {
 		userBasketDao.delete(userBasket);
 		return null;
 	}

@@ -80,7 +80,7 @@ public class ProductService {
 		
 		
 		UserBasket userProduct=userBasketDao.getUserProduct(userBasket.getProductName(),userBasket.getEmail());
-		baseResponce=new BaseResponce();
+		baseResponce=new BaseResponce<Void>();
 		
 		if(userProduct!=null)
 		{

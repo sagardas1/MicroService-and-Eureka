@@ -40,7 +40,7 @@ public class UserController {
 	}
 	@GetMapping(value="/login",headers="Accept=application/json")
 	public BaseResponce<Void> login( @RequestParam String email,@RequestParam String password ) {
-		BaseResponce baseResponce=null;
+		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.login(email,password);
 		return baseResponce;

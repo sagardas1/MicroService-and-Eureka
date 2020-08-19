@@ -75,8 +75,8 @@ public class ProductService {
 		return list;
 	}
 
-	public BaseResponce addToCart(UserBasket userBasket) {
-		BaseResponce baseResponce = null;
+	public BaseResponce<Void> addToCart(UserBasket userBasket) {
+		BaseResponce<Void> baseResponce = null;
 		
 		
 		UserBasket userProduct=userBasketDao.getUserProduct(userBasket.getProductName(),userBasket.getEmail());

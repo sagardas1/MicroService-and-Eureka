@@ -200,7 +200,6 @@ public class ProductService {
 	}
 
 	public List<ProductPriceDetails> vieworderdetails(String email) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

@@ -32,7 +32,7 @@ public class UserController {
 		return baseResponce;
 	}
 	@PostMapping(value="/updateuserregistration",headers="Accept=application/json")
-	public BaseResponce updateUserRegistration(@RequestBody RegistrationVo registration) {
+	public BaseResponce<Void> updateUserRegistration(@RequestBody RegistrationVo registration) {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.updateUserRegistration(registration);

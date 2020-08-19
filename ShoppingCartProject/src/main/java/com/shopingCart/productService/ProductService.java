@@ -51,7 +51,7 @@ public class ProductService {
 	query.getResultList();
 	
 		
-		BaseResponce baseResponce = new BaseResponce();
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 		ProductVo pro = productDao.getproductFromdb(productVo.getProductName());
 		if (pro != null) {
 			productVo.setQuantity(productVo.getQuantity() + pro.getQuantity());

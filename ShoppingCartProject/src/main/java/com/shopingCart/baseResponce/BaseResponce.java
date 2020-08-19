@@ -1,6 +1,8 @@
 package com.shopingCart.baseResponce;
 
-public class BaseResponce {
+public class BaseResponce<T> {
+	private T t;
+	
 	private String statusMessage;
 	private long statusCode;
 	public String getStatusMessage() {
@@ -14,6 +16,12 @@ public class BaseResponce {
 	}
 	public void setStatusCode(long statusCode) {
 		this.statusCode = statusCode;
+	}
+	public T getT() {
+		return t;
+	}
+	public void setT(T t) {
+		this.t = t;
 	}
 	
 

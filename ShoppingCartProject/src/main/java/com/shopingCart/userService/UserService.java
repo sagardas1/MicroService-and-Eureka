@@ -35,8 +35,8 @@ public class UserService {
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
-				RegistrationVo regis = userDao.getUserRegistrationByEmail(registration.getEmail());
-				if (regis == null) {
+			//	RegistrationVo regis = userDao.getUserRegistrationByEmail(registration.getEmail());
+				//if (regis == null) {
 
 					// roleId=1//users
 					// roleId=2 ,admin
@@ -44,15 +44,15 @@ public class UserService {
 					userDao.save(registration);
 					
 					
-					userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
-					Integer.parseInt("");
+				//	userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
+					//Integer.parseInt("");
 					
 					baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 					baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
-				} else {
-					baseResponce.setStatusCode(ResponceConstants.FAILED);
-					baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
-				}
+//				} else {
+//					baseResponce.setStatusCode(ResponceConstants.FAILED);
+//					baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
+//				}
 			} else {
 				baseResponce.setStatusCode(ResponceConstants.FAILED);
 				baseResponce.setStatusMessage(ResponceConstants.PASSWORD_DIDNT_MATCH);

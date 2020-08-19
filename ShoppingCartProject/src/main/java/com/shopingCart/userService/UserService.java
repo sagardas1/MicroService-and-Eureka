@@ -30,8 +30,8 @@ public class UserService {
 	public static String OTP = null;
 
 	@Transactional
-	public BaseResponce userRegistration(RegistrationVo registration) {
-		BaseResponce baseResponce = new BaseResponce();
+	public BaseResponce<Void> userRegistration(RegistrationVo registration) {
+		BaseResponce<Void> baseResponce = new BaseResponce();
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {

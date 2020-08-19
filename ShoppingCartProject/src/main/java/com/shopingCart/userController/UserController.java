@@ -25,7 +25,7 @@ public class UserController {
 	
 	@Transactional
 	@PostMapping(value="/userregistration",headers="Accept=application/json")
-	public BaseResponce userRegistration(@RequestBody RegistrationVo registration) {
+	public BaseResponce<Void> userRegistration(@RequestBody RegistrationVo registration) {
 		BaseResponce baseResponce=null;
 		
 		baseResponce=	userService.userRegistration(registration);

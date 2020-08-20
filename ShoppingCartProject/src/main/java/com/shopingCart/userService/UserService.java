@@ -64,7 +64,7 @@ public class UserService {
 		return baseResponce;
 	}
 
-	public BaseResponce login(String email, String password) {
+	public BaseResponce<Void> login(String email, String password) {
 		BaseResponce baseResponce = null;
 		try {
 			LoginVo loginCrendetial = loginDAO.findUserLogin(email, password);

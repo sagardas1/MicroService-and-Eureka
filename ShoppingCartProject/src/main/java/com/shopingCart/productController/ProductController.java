@@ -86,7 +86,7 @@ public class ProductController {
 	}
 
 	@DeleteMapping(value = "/removeproductfromcart", headers = "Accept=application/json")
-	public BaseResponce removeProductFromCart(@RequestBody UserBasket userBasket) {
+	public BaseResponce<Void> removeProductFromCart(@RequestBody UserBasket userBasket) {
 
 		BaseResponce baseResponce = null;
 		try {

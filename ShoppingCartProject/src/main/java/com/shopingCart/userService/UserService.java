@@ -31,7 +31,7 @@ public class UserService {
 
 	@Transactional
 	public BaseResponce<Void> userRegistration(RegistrationVo registration) {
-		BaseResponce<Void> baseResponce = new BaseResponce();
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {

@@ -93,7 +93,7 @@ public class UserService {
 	}
 
 	public BaseResponce<Void> deleteRegistation(RegistrationVo registrationVo) {
-		BaseResponce baseResponce = null;
+		BaseResponce<Void> baseResponce = null;
 		int deleteRegistration = userDao.deleteRegistation(registrationVo.getEmail());
 		LoginVo loginVo=new LoginVo();
 		loginVo.setEmail(registrationVo.getEmail());

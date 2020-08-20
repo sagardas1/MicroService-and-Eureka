@@ -111,7 +111,7 @@ public class UserService {
 
 	public BaseResponce<Void> sendOtP(String email) {
 		LoginVo loginVo = null;
-		BaseResponce<Void> baseResponce = new BaseResponce();
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 		loginVo = loginDAO.findUser(email);
 		if (loginVo != null) {
 			Random rand = new Random();

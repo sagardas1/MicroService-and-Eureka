@@ -92,7 +92,7 @@ public class UserService {
 		return bulk;
 	}
 
-	public BaseResponce deleteRegistation(RegistrationVo registrationVo) {
+	public BaseResponce<Void> deleteRegistation(RegistrationVo registrationVo) {
 		BaseResponce baseResponce = null;
 		int deleteRegistration = userDao.deleteRegistation(registrationVo.getEmail());
 		LoginVo loginVo=new LoginVo();

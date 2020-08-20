@@ -53,7 +53,7 @@ public class ProductController {
 	@PostMapping(value = "/addToCart", headers = "Accept=application/json")
 	public BaseResponce<Void> addToCart(@RequestBody UserBasket userBasket) {
 
-		BaseResponce baseResponce = null;
+		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.addToCart(userBasket);
 		} catch (Exception e) {

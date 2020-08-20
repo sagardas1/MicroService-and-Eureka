@@ -69,7 +69,7 @@ public class UserService {
 		try {
 			LoginVo loginCrendetial = loginDAO.findUserLogin(email, password);
 			// System.out.println(new Gson().toJson(loginCrendetial));
-			baseResponce = new BaseResponce();
+			baseResponce = new BaseResponce<Void>();
 			if (loginCrendetial != null) {
 				baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 				baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE_LOGIN);

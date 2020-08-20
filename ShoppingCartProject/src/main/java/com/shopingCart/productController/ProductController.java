@@ -51,7 +51,7 @@ public class ProductController {
 	}
 
 	@PostMapping(value = "/addToCart", headers = "Accept=application/json")
-	public BaseResponce addToCart(@RequestBody UserBasket userBasket) {
+	public BaseResponce<Void> addToCart(@RequestBody UserBasket userBasket) {
 
 		BaseResponce baseResponce = null;
 		try {

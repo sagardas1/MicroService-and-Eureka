@@ -65,7 +65,7 @@ public class UserService {
 	}
 
 	public BaseResponce<Void> login(String email, String password) {
-		BaseResponce baseResponce = null;
+		BaseResponce<Void> baseResponce = null;
 		try {
 			LoginVo loginCrendetial = loginDAO.findUserLogin(email, password);
 			// System.out.println(new Gson().toJson(loginCrendetial));

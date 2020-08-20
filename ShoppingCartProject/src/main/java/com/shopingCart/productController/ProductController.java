@@ -88,7 +88,7 @@ public class ProductController {
 	@DeleteMapping(value = "/removeproductfromcart", headers = "Accept=application/json")
 	public BaseResponce<Void> removeProductFromCart(@RequestBody UserBasket userBasket) {
 
-		BaseResponce baseResponce = null;
+		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.removeProductFromCart(userBasket);
 		} catch (Exception e) {

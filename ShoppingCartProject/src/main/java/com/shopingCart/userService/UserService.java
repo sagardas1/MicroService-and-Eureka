@@ -98,7 +98,7 @@ public class UserService {
 		LoginVo loginVo=new LoginVo();
 		loginVo.setEmail(registrationVo.getEmail());
 		loginDAO.deleteLongin(loginVo.getEmail());
-		baseResponce = new BaseResponce();
+		baseResponce = new BaseResponce<Void>();
 		if (deleteRegistration > 0) {
 			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);

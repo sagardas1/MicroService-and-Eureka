@@ -109,7 +109,7 @@ public class UserService {
 		return baseResponce;
 	}
 
-	public BaseResponce sendOtP(String email) {
+	public BaseResponce<Void> sendOtP(String email) {
 		LoginVo loginVo = null;
 		BaseResponce baseResponce = new BaseResponce();
 		loginVo = loginDAO.findUser(email);

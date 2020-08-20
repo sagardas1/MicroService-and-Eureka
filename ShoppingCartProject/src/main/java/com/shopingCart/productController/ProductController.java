@@ -28,7 +28,7 @@ public class ProductController {
 	@PostMapping(value = "/insertProduct", headers = "Accept=application/json")
 	public BaseResponce<Void> insertProduct(@RequestBody ProductVo productVo) {
 
-		BaseResponce baseResponce = null;
+		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.insertProduct(productVo);
 		} catch (Exception e) {

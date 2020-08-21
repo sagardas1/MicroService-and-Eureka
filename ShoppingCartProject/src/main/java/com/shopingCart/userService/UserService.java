@@ -155,7 +155,7 @@ public class UserService {
 	}
 
 	public BaseResponce<Void> checkOtp(String otp) {
-		BaseResponce<Void> baseResponce = new BaseResponce();
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 		if (otp.equals(OTP)) {
 			baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 			baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);

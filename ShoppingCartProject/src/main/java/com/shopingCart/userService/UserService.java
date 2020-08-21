@@ -166,8 +166,8 @@ public class UserService {
 		return baseResponce;
 	}
 
-	public BaseResponce deleteUserPermanently(RegistrationVo registration) {
-		BaseResponce baseResponce = new BaseResponce();
+	public BaseResponce<Void> deleteUserPermanently(RegistrationVo registration) {
+		BaseResponce<Void> baseResponce = new BaseResponce();
 		userDao.delete(registration);
 		baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 		baseResponce.setStatusMessage(ResponceConstants.DELETE_MESSAGE);

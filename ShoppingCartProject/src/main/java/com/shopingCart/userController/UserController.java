@@ -53,7 +53,7 @@ public class UserController {
 	}
 	
 	@DeleteMapping(value="/deleteRegistation",headers="Accept=application/json")
-	public BaseResponce deleteRegistation(@RequestBody RegistrationVo registrationVo) {
+	public BaseResponce<Void> deleteRegistation(@RequestBody RegistrationVo registrationVo) {
 		
 		BaseResponce baseResponce=	userService.deleteRegistation(registrationVo);
 		return baseResponce;

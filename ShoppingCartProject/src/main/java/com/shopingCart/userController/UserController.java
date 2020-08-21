@@ -66,7 +66,7 @@ public class UserController {
 	}
 	
 	@GetMapping(value="/checkOtp",headers="Accept=application/json")
-	public BaseResponce checkOtp(@RequestParam String otp ) {
+	public BaseResponce<Void> checkOtp(@RequestParam String otp ) {
 		
 		BaseResponce baseResponce=new BaseResponce();
 		baseResponce= userService.checkOtp(otp);

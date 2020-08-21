@@ -55,7 +55,7 @@ public class UserController {
 	@DeleteMapping(value="/deleteRegistation",headers="Accept=application/json")
 	public BaseResponce<Void> deleteRegistation(@RequestBody RegistrationVo registrationVo) {
 		
-		BaseResponce baseResponce=	userService.deleteRegistation(registrationVo);
+		BaseResponce<Void> baseResponce=	userService.deleteRegistation(registrationVo);
 		return baseResponce;
 	}
 	@GetMapping(value="/sendOtP",headers="Accept=application/json")

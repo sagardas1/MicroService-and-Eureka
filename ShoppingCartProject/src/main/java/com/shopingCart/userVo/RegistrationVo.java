@@ -10,7 +10,7 @@ import com.shopingCart.baseResponce.BaseResponce;
 
 @Entity
 @Table(name="registration")
-public class RegistrationVo extends BaseResponce{
+public class RegistrationVo extends BaseResponce<Object>{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long userId;

@@ -176,7 +176,7 @@ public class UserService {
 	}
 
 	public BaseResponce<Void> updateUserRegistration(RegistrationVo registration) {
-		BaseResponce<Void> baseResponce = new BaseResponce();
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 
 		try {
 

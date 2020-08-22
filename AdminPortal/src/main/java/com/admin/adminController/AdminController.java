@@ -44,7 +44,7 @@ public class AdminController {
 	}
 	@ResponseBody
 	@PostMapping(value="/insertProduct",headers="Accept=application/json")
-	public BaseResponce insertProduct(@RequestBody ProductVo product){
+	public BaseResponce<Void> insertProduct(@RequestBody ProductVo product){
 		BaseResponce baseResponce=adminService.insertProduct(product);
 		
 		return baseResponce;

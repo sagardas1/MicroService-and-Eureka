@@ -73,6 +73,13 @@
     <version>5.2.3.RELEASE</version>
 </dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-feign</artifactId>
+    <version>1.0.0.RELEASE</version>
+</dependency>
+
 		
 		</dependencies>
 	<dependencyManagement>

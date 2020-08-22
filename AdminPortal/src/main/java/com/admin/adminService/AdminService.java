@@ -55,7 +55,7 @@ public class AdminService {
 
 	public BaseResponce<Void> insertProduct(ProductVo product) {
 		try {
-		BaseResponce baseResponce=
+		BaseResponce<Void> baseResponce=
 				getRestTemplate.postForObject("http://SHOPPING-CART/product/insertProduct", product, BaseResponce.class);
 		return baseResponce;
 		}catch(ArithmeticException | NullPointerException ee) {

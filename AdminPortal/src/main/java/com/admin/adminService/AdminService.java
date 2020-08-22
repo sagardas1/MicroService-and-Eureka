@@ -53,7 +53,7 @@ public class AdminService {
 		return list;
 	}
 
-	public BaseResponce insertProduct(ProductVo product) {
+	public BaseResponce<Void> insertProduct(ProductVo product) {
 		try {
 		BaseResponce baseResponce=
 				getRestTemplate.postForObject("http://SHOPPING-CART/product/insertProduct", product, BaseResponce.class);

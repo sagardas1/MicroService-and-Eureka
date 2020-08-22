@@ -1,6 +1,6 @@
 package convertJSONObjectTomAP;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -12,11 +12,7 @@ import org.json.JSONObject;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
-import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
 
 public class Conversion {

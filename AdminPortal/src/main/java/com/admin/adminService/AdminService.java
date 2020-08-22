@@ -55,6 +55,7 @@ public class AdminService {
 
 	public BaseResponce<Void> insertProduct(ProductVo product) {
 		try {
+		@SuppressWarnings("unchecked")
 		BaseResponce<Void> baseResponce=
 				getRestTemplate.postForObject("http://SHOPPING-CART/product/insertProduct", product, BaseResponce.class);
 		return baseResponce;

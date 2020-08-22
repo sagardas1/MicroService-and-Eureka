@@ -4,7 +4,7 @@ import com.admin.baseResponce.BaseResponce;
 
 
 
-public class RegistrationVo extends BaseResponce{
+public class RegistrationVo extends BaseResponce<Void>{
 	
 	private long userId;
 	private String name;

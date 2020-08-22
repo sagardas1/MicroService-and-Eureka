@@ -64,7 +64,7 @@ public class AdminService {
 		return null;
 	}
 
-	public BaseResponce deleteUser(RegistrationVo registrationVo) {
+	public BaseResponce<Void> deleteUser(RegistrationVo registrationVo) {
 		getRestTemplate.delete("http://SHOPPING-CART/user/deleteRegistation", registrationVo);
 		return null;
 	}

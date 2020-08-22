@@ -54,7 +54,7 @@ public class AdminController {
 	@DeleteMapping(value="/deleteUser",headers="Accept=application/json")
 	public BaseResponce<Void> deleteUser(@RequestBody RegistrationVo registrationVo){
 		@SuppressWarnings("unused")
-		BaseResponce baseResponce=adminService.deleteUser(registrationVo);
+		BaseResponce<Void> baseResponce=adminService.deleteUser(registrationVo);
 		
 		return null;
 		

@@ -35,16 +35,19 @@ public class Conversion {
 		
 
 		JSONObject jsonObject = new JSONObject(s1);
+		@SuppressWarnings("rawtypes")
 		HashMap hashMap=(HashMap) jsonToMap(jsonObject);
 	
 		Object jsonObject1=hashMap.get("steps");
 		
 		JSONObject jsonObject11 = new JSONObject(jsonObject1.toString());
 		
+		@SuppressWarnings("rawtypes")
 		HashMap map2=(HashMap) jsonToMap(jsonObject11);
 		
 		Object jsonObject12=map2.get("settings");
 		JSONObject jsonObject122 = new JSONObject(jsonObject12.toString());
+		@SuppressWarnings("rawtypes")
 		HashMap finalMap=(HashMap) jsonToMap(jsonObject122);
 		
 		Boolean type=(Boolean) finalMap.get("pass");
@@ -64,6 +67,7 @@ public class Conversion {
 	public static Map<String, Object> toMap(JSONObject object) throws JSONException {
 		Map<String, Object> map = new HashMap<String, Object>();
 
+		@SuppressWarnings("unchecked")
 		Iterator<String> keysItr = object.keys();
 		while (keysItr.hasNext()) {
 			String key = keysItr.next();

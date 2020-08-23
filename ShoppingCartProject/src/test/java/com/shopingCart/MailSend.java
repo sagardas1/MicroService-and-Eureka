@@ -1,9 +1,12 @@
 package com.shopingCart;
 
-import java.util.*; 
-import javax.mail.*; 
-import javax.mail.internet.*; 
-import javax.activation.*; 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage; 
 public class MailSend {
 public static void main(String[] args) throws AddressException, MessagingException {
 	java.util.Properties props = new java.util.Properties();

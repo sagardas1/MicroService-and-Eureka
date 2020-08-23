@@ -8,6 +8,8 @@ public class ResponceConstants {
 	public static final int STATUS403 = 403;
 	public static final int STATUS404 = 404;
 	public static final int FAILED = 405;
+	public static final int STATUS101 = 101;
+	public static final int FAILED1 = 1;
 	
 	// FOR RESPONSE MESSAGE
 	public static final String SUCESS_MESSAGE = "Success";
@@ -17,6 +19,8 @@ public class ResponceConstants {
 	public static final String FAILED_MESSAGE_LOGIN = "Incorrect email or password";
 	public static final String UPDATE = "Updated";
 	public static final String PAYMENT_SUCCESSFULL = "Payment Successfull";
+	
+	
 	
 
 	

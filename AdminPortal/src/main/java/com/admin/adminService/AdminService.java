@@ -89,5 +89,8 @@ public class AdminService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	public int delete(int productId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

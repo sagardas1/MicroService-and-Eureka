@@ -30,6 +30,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.userRegistration(registration);
+		baseResponce.setTimeSramp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@PostMapping(value="/updateuserregistration",headers="Accept=application/json")

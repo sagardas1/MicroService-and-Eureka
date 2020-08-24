@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shopingCart.baseResponce.BaseResponce;
+import com.shopingCart.responceConstants.ResponceConstants;
 import com.shopingCart.userService.UserService;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
@@ -82,7 +83,9 @@ public class UserController {
 	public BaseResponce<Void> nameCheck(@PathVariable (value="name")String name) {
 		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
 		baseResponce.setTimeSramp(System.currentTimeMillis());
-		return null;
+		baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+		baseResponce.setStatusMessage(name);
+		return baseResponce;
 		
 	}
 	

@@ -75,6 +75,7 @@ public class UserController {
 		
 		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
 		baseResponce= userService.checkOtp(otp);
+		baseResponce.setTimeSramp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/namecheck/{name}",headers="Accept=application/json")

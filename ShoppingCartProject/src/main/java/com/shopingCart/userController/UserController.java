@@ -65,9 +65,9 @@ public class UserController {
 	}
 	@GetMapping(value="/sendOtP",headers="Accept=application/json")
 	public BaseResponce<Void> sendOtP(@RequestParam String email ) {
-		
-		
-		return userService.sendOtP(email);
+		BaseResponce baseResponce=userService.sendOtP(email);
+		baseResponce.setTimeSramp(System.currentTimeMillis());
+		return baseResponce;
 	}
 	
 	@GetMapping(value="/checkOtp",headers="Accept=application/json")

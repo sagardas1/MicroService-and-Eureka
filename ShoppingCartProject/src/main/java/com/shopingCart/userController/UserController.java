@@ -60,6 +60,7 @@ public class UserController {
 	public BaseResponce<Void> deleteRegistation(@RequestBody RegistrationVo registrationVo) {
 		
 		BaseResponce<Void> baseResponce=	userService.deleteRegistation(registrationVo);
+		baseResponce.setTimeSramp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/sendOtP",headers="Accept=application/json")

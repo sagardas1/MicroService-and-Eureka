@@ -80,7 +80,7 @@ public class UserController {
 	}
 	@GetMapping(value="/namecheck/{name}",headers="Accept=application/json")
 	public BaseResponce<Void> nameCheck(@PathVariable (value="name")String name) {
-		BaseResponce baseResponce=new BaseResponce<Void>();
+		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
 		baseResponce.setTimeSramp(System.currentTimeMillis());
 		return null;
 		

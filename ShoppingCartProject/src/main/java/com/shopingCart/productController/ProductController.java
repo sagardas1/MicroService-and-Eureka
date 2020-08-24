@@ -32,6 +32,7 @@ public class ProductController {
 		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.insertProduct(productVo);
+			baseResponce.setTimeSramp(System.currentTimeMillis());
 		} catch (Exception e) {
 			System.out.println(e);
 		}

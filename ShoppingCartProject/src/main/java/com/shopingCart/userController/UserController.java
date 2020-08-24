@@ -38,6 +38,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.updateUserRegistration(registration);
+		baseResponce.setTimeSramp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/login",headers="Accept=application/json")

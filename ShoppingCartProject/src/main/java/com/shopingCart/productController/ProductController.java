@@ -58,6 +58,7 @@ public class ProductController {
 		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.addToCart(userBasket);
+			baseResponce.setTimeSramp(System.currentTimeMillis());
 		} catch (Exception e) {
 			System.out.println(e);
 		}

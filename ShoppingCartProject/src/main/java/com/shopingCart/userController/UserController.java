@@ -79,8 +79,8 @@ public class UserController {
 		return baseResponce;
 	}
 	@GetMapping(value="/namecheck/{name}",headers="Accept=application/json")
-	public String nameCheck(@PathVariable (value="name")String name) {
-		return name;
+	public BaseResponce<Void> nameCheck(@PathVariable (value="name")String name) {
+		return null;
 		
 	}
 	

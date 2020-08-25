@@ -46,6 +46,7 @@ public class AdminController {
 	@PostMapping(value="/insertProduct",headers="Accept=application/json")
 	public BaseResponce<Void> insertProduct(@RequestBody ProductVo product){
 		BaseResponce<Void> baseResponce=adminService.insertProduct(product);
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		
 		return baseResponce;
 		

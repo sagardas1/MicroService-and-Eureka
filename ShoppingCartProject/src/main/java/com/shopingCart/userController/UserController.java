@@ -31,7 +31,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.userRegistration(registration);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@PostMapping(value="/updateuserregistration",headers="Accept=application/json")
@@ -39,7 +39,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.updateUserRegistration(registration);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/login",headers="Accept=application/json")
@@ -47,7 +47,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce=null;
 		
 		baseResponce=	userService.login(email,password);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/getAllRegistration",headers="Accept=application/json")
@@ -61,13 +61,13 @@ public class UserController {
 	public BaseResponce<Void> deleteRegistation(@RequestBody RegistrationVo registrationVo) {
 		
 		BaseResponce<Void> baseResponce=	userService.deleteRegistation(registrationVo);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/sendOtP",headers="Accept=application/json")
 	public BaseResponce<Void> sendOtP(@RequestParam String email ) {
 		BaseResponce<Void> baseResponce=userService.sendOtP(email);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	
@@ -76,13 +76,13 @@ public class UserController {
 		
 		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
 		baseResponce= userService.checkOtp(otp);
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	@GetMapping(value="/namecheck/{name}",headers="Accept=application/json")
 	public BaseResponce<Void> nameCheck(@PathVariable (value="name")String name) {
 		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
-		baseResponce.setTimeSramp(System.currentTimeMillis());
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 		baseResponce.setStatusMessage(name);
 		return baseResponce;

@@ -56,6 +56,7 @@ public class AdminController {
 	public BaseResponce<Void> deleteUser(@RequestBody RegistrationVo registrationVo){
 		@SuppressWarnings("unused")
 		BaseResponce<Void> baseResponce=adminService.deleteUser(registrationVo);
+		baseResponce.setTimeStamp(System.currentTimeMillis());
 		
 		return null;
 		

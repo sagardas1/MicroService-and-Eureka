@@ -5,7 +5,7 @@ public class BaseResponce<T> {
 	
 	private String statusMessage;
 	private long statusCode;
-	private long timeSramp;
+	private long timeStamp;
 	public String getStatusMessage() {
 		return statusMessage;
 	}
@@ -24,12 +24,11 @@ public class BaseResponce<T> {
 	public void setT(T t) {
 		this.t = t;
 	}
-	public long getTimeSramp() {
-		return timeSramp;
+	public long getTimeStamp() {
+		return timeStamp;
 	}
-	public void setTimeSramp(long timeSramp) {
-		this.timeSramp = timeSramp;
+	public void setTimeStamp(long timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 	
-
 }

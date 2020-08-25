@@ -32,7 +32,7 @@ public class ProductController {
 		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.insertProduct(productVo);
-			baseResponce.setTimeSramp(System.currentTimeMillis());
+			baseResponce.setTimeStamp(System.currentTimeMillis());
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -58,7 +58,7 @@ public class ProductController {
 		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.addToCart(userBasket);
-			baseResponce.setTimeSramp(System.currentTimeMillis());
+			baseResponce.setTimeStamp(System.currentTimeMillis());
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -95,7 +95,7 @@ public class ProductController {
 		BaseResponce<Void> baseResponce = null;
 		try {
 			baseResponce = productService.removeProductFromCart(userBasket);
-			baseResponce.setTimeSramp(System.currentTimeMillis());
+			baseResponce.setTimeStamp(System.currentTimeMillis());
 		} catch (Exception e) {
 			System.out.println(e);
 		}

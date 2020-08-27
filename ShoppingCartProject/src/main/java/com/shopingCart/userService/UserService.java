@@ -35,20 +35,20 @@ public class UserService {
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
-			//	RegistrationVo regis = userDao.getUserRegistrationByEmail(registration.getEmail());
-				//if (regis == null) {
+				// RegistrationVo regis =
+				// userDao.getUserRegistrationByEmail(registration.getEmail());
+				// if (regis == null) {
 
-					// roleId=1//users
-					// roleId=2 ,admin
-					registration.setRoleId(2);
-					userDao.save(registration);
-					
-					
-				//	userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
-					//Integer.parseInt("");
-					
-					baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
-					baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
+				// roleId=1//users
+				// roleId=2 ,admin
+				registration.setRoleId(2);
+				userDao.save(registration);
+
+				// userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
+				// Integer.parseInt("");
+
+				baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
+				baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);
 //				} else {
 //					baseResponce.setStatusCode(ResponceConstants.FAILED);
 //					baseResponce.setStatusMessage(ResponceConstants.FAIL_MESSAGE);
@@ -95,7 +95,7 @@ public class UserService {
 	public BaseResponce<Void> deleteRegistation(RegistrationVo registrationVo) {
 		BaseResponce<Void> baseResponce = null;
 		int deleteRegistration = userDao.deleteRegistation(registrationVo.getEmail());
-		LoginVo loginVo=new LoginVo();
+		LoginVo loginVo = new LoginVo();
 		loginVo.setEmail(registrationVo.getEmail());
 		loginDAO.deleteLongin(loginVo.getEmail());
 		baseResponce = new BaseResponce<Void>();

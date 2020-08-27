@@ -21,73 +21,77 @@ import com.shopingCart.userVo.RegistrationVo;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	
+
 	@Autowired
 	public UserService userService;
-	
+
 	@Transactional
-	@PostMapping(value="/userregistration",headers="Accept=application/json")
+	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> userRegistration(@RequestBody RegistrationVo registration) {
-		BaseResponce<Void> baseResponce=null;
-		
-		baseResponce=	userService.userRegistration(registration);
+		BaseResponce<Void> baseResponce = null;
+
+		baseResponce = userService.userRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	@PostMapping(value="/updateuserregistration",headers="Accept=application/json")
+
+	@PostMapping(value = "/updateuserregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> updateUserRegistration(@RequestBody RegistrationVo registration) {
-		BaseResponce<Void> baseResponce=null;
-		
-		baseResponce=	userService.updateUserRegistration(registration);
+		BaseResponce<Void> baseResponce = null;
+
+		baseResponce = userService.updateUserRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	@GetMapping(value="/login",headers="Accept=application/json")
-	public BaseResponce<Void> login( @RequestParam String email,@RequestParam String password ) {
-		BaseResponce<Void> baseResponce=null;
-		
-		baseResponce=	userService.login(email,password);
+
+	@GetMapping(value = "/login", headers = "Accept=application/json")
+	public BaseResponce<Void> login(@RequestParam String email, @RequestParam String password) {
+		BaseResponce<Void> baseResponce = null;
+
+		baseResponce = userService.login(email, password);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	@GetMapping(value="/getAllRegistration",headers="Accept=application/json")
-	public RegistrationBulk getAllRegistration( ) {
-		
-		RegistrationBulk list=	userService.getAllRegistration();
+
+	@GetMapping(value = "/getAllRegistration", headers = "Accept=application/json")
+	public RegistrationBulk getAllRegistration() {
+
+		RegistrationBulk list = userService.getAllRegistration();
 		return list;
 	}
-	
-	@DeleteMapping(value="/deleteRegistation",headers="Accept=application/json")
+
+	@DeleteMapping(value = "/deleteRegistation", headers = "Accept=application/json")
 	public BaseResponce<Void> deleteRegistation(@RequestBody RegistrationVo registrationVo) {
-		
-		BaseResponce<Void> baseResponce=	userService.deleteRegistation(registrationVo);
+
+		BaseResponce<Void> baseResponce = userService.deleteRegistation(registrationVo);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	@GetMapping(value="/sendOtP",headers="Accept=application/json")
-	public BaseResponce<Void> sendOtP(@RequestParam String email ) {
-		BaseResponce<Void> baseResponce=userService.sendOtP(email);
+
+	@GetMapping(value = "/sendOtP", headers = "Accept=application/json")
+	public BaseResponce<Void> sendOtP(@RequestParam String email) {
+		BaseResponce<Void> baseResponce = userService.sendOtP(email);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	
-	@GetMapping(value="/checkOtp",headers="Accept=application/json")
-	public BaseResponce<Void> checkOtp(@RequestParam String otp ) {
-		
-		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
-		baseResponce= userService.checkOtp(otp);
+
+	@GetMapping(value = "/checkOtp", headers = "Accept=application/json")
+	public BaseResponce<Void> checkOtp(@RequestParam String otp) {
+
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
+		baseResponce = userService.checkOtp(otp);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	@GetMapping(value="/namecheck/{name}",headers="Accept=application/json")
-	public BaseResponce<Void> nameCheck(@PathVariable (value="name")String name) {
-		BaseResponce<Void> baseResponce=new BaseResponce<Void>();
+
+	@GetMapping(value = "/namecheck/{name}", headers = "Accept=application/json")
+	public BaseResponce<Void> nameCheck(@PathVariable(value = "name") String name) {
+		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 		baseResponce.setStatusMessage(name);
 		return baseResponce;
-		
+
 	}
-	
-	
+
 }

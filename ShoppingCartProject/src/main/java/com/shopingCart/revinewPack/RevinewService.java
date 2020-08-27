@@ -19,8 +19,8 @@ public class RevinewService {
 
 	public void updateRevinew() {
 		RevinewVo revinewVo = null;
-		
-System.out.println("crons-------------------->");
+
+		System.out.println("crons-------------------->");
 		List<ProductTransactions> productTransactionsList = productTransactionsDao.getAll();
 
 		for (int i = 0; i < productTransactionsList.size(); i++) {
@@ -30,7 +30,6 @@ System.out.println("crons-------------------->");
 			revinewVo.setEmail(productTransactions.getEmail());
 			revinewDao.save(revinewVo);
 		}
-		
 
 	}
 

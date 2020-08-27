@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sample")
 public class SampleControllerClass {
-	
-	@GetMapping(value="/sendHello",headers="Accepts=application/json")
-	public String sendHello(@RequestParam(name="hello",required=false,defaultValue="hello") String hello) {return hello;}
-	
+
+	@GetMapping(value = "/sendHello", headers = "Accepts=application/json")
+	public String sendHello(@RequestParam(name = "hello", required = false, defaultValue = "hello") String hello) {
+		return hello;
+	}
 
 }

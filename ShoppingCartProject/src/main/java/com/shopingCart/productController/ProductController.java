@@ -71,7 +71,7 @@ public class ProductController {
 		BasketInfo basketInfo = null;
 		try {
 			basketInfo = productService.viewCart(email);
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -138,11 +138,11 @@ public class ProductController {
 		}
 		return product;
 	}
-	
-	@GetMapping(value="/productName/{name}", headers = "Accept=application/json")
-	public String getProductName(@PathVariable(value="name")String name) {
+
+	@GetMapping(value = "/productName/{name}", headers = "Accept=application/json")
+	public String getProductName(@PathVariable(value = "name") String name) {
 		return name;
-		
+
 	}
 
 }

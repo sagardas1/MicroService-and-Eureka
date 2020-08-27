@@ -73,8 +73,8 @@ public class PurchaseMessageingService {
 		}
 
 	}
-	
-	public void sendMessage(String subject,String email,String text) {
+
+	public void sendMessage(String subject, String email, String text) {
 		String to = email;
 
 		// Sender's email ID needs to be mentioned

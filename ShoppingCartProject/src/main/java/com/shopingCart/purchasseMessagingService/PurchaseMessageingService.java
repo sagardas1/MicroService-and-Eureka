@@ -28,7 +28,6 @@ public class PurchaseMessageingService {
 		// Get system properties
 		Properties properties = System.getProperties();
 
-		// Setup mail server
 		properties.put("mail.smtp.host", host);
 		properties.put("mail.smtp.port", "465");
 		properties.put("mail.smtp.ssl.enable", "true");

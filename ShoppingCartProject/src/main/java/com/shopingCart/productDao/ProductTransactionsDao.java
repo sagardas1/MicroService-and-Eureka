@@ -12,13 +12,10 @@ import com.shopingCart.productVo.ProductTransactions;
 
 @Repository
 @Transactional
-public interface ProductTransactionsDao extends CrudRepository<ProductTransactions,Long>{
+public interface ProductTransactionsDao extends CrudRepository<ProductTransactions, Long> {
 
 	@Transactional
-	@Query(value="select * from productTransactions",nativeQuery=true)
+	@Query(value = "select * from productTransactions", nativeQuery = true)
 	public List<ProductTransactions> getAll();
-	
-	
-	
 
 }

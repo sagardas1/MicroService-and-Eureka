@@ -22,6 +22,7 @@ public class PurchaseMessageingService {
 		// Sender's email ID needs to be mentioned
 		String from = "venkyjydav@gmail.com";
 
+		
 		// Assuming you are sending email from through gmails smtp
 		String host = "smtp.gmail.com";
 

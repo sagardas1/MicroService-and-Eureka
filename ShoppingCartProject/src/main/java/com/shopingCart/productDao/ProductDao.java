@@ -30,6 +30,7 @@ public interface ProductDao extends CrudRepository<ProductVo, Long> {
 	@Query(value = "select * from productBaseDate where quantity>0", nativeQuery = true)
 	List<ProductVo> viewAllProduct();
 
+	
 	@Modifying
 	@Transactional
 	@Query(value = "update productBaseDate set quantity=:quantity where productName=:productName", nativeQuery = true)

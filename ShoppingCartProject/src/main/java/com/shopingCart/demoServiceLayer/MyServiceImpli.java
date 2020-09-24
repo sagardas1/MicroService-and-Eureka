@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("myServiceImpli")
-public class MyServiceImpli implements MyService{
+public class MyServiceImpli implements MyService {
 	@SuppressWarnings("unused")
 	@Autowired
 	private Reposi reposi;

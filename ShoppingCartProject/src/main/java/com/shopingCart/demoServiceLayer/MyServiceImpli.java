@@ -10,7 +10,6 @@ public class MyServiceImpli implements MyService {
 	private Reposi reposi;
 
 	public String getName(String name) {
-		// TODO Auto-generated method stub
 		return "myServiceImpli";
 	}
 

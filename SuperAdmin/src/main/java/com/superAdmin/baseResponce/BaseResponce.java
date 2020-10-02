@@ -7,6 +7,7 @@ public class BaseResponce<T> {
 	public String getStatusMessage() {
 		return statusMessage;
 	}
+	
 	public void setStatusMessage(String statusMessage) {
 		this.statusMessage = statusMessage;
 	}

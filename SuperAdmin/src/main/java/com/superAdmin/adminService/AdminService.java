@@ -23,6 +23,7 @@ public class AdminService {
 
 	public List<ProductPriceDetails> getPriceOfProduct() {
 
+		
 		ProductList listOfProduct = productListService.getListOfProduct();
 		List<ProductPriceDetails> productPriceDetailsList = new ArrayList<>();
 

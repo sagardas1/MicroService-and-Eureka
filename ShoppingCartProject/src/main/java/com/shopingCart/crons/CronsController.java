@@ -3,6 +3,7 @@ package com.shopingCart.crons;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.shopingCart.revinewPack.RevinewService;
@@ -13,9 +14,8 @@ import com.shopingCart.revinewPack.RevinewService;
 public class CronsController {
 	@Autowired
 	RevinewService revinewService;
-	
-	//every 5mins
-	//@Scheduled(cron="*/5 * * * * ?")
+
+	@Scheduled(cron="*/5 * * * * ?")
 	public void saveReportsGenerate() {
 		revinewService.updateRevinew();
 	}

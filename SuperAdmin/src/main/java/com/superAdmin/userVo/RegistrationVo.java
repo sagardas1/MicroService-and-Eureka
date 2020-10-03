@@ -7,6 +7,7 @@ import com.superAdmin.baseResponce.BaseResponce;
 public class RegistrationVo extends BaseResponce<Void>{
 
 	private long userId;
+	
 	private String name;
 	private String address;
 	private String contactNumber;

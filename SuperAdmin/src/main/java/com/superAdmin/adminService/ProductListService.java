@@ -17,7 +17,6 @@ public class ProductListService {
 	@Autowired
 	RestTemplate getRestTemplate;
 	
-	
 	// getting list of products
 	@HystrixCommand(fallbackMethod = "getListOfProductFallBack"
 			,commandProperties= {@HystrixProperty(name="execution.isolation.thread.timeOutInMilliseconds",value="2000"),

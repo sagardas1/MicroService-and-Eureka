@@ -5,10 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductTransactions  {
+public class ProductTransactions {
 
 	private long id;
-	
+
 	private double amountPaid;
 	private double finalAmount;
 	private double paymentStatus;

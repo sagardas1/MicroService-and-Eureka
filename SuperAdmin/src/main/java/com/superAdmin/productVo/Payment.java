@@ -13,6 +13,4 @@ public class Payment {
 	private double amountPaid;
 	private double amountToBePaid;
 	
-	
-
 }

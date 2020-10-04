@@ -8,7 +8,6 @@ import lombok.Setter;
 public class ProductPriceDetails {
 
 	private long productId;
-
 	private String productName;
 	private double price;
 

@@ -12,6 +12,5 @@ public class RegistrationBulk {
 	public void setRegistrationList(List<RegistrationVo> registrationList) {
 		this.registrationList = registrationList;
 	}
-	
 
 }

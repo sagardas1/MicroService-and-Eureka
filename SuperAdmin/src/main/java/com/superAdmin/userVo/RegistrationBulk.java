@@ -9,6 +9,7 @@ public class RegistrationBulk {
 		return registrationList;
 	}
 
+
 	public void setRegistrationList(List<RegistrationVo> registrationList) {
 		this.registrationList = registrationList;
 	}

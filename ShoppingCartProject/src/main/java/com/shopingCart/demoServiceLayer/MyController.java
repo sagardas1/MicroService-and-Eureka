@@ -13,25 +13,27 @@ public class MyController {
 	@Qualifier("myServiceImpli")
 	@Autowired
 	private MyService myService;
-	
+
 	@Qualifier("otherServiceImpli")
 	@Autowired
 	private MyService myService1;
-	
-	@GetMapping(value="/getname",headers="Accept=application/json")
+
+	@GetMapping(value = "/getname", headers = "Accept=application/json")
 	public String getName() {
 		System.out.println("dfghj");
 		return myService1.getName("");
 	}
-	@GetMapping(value="/name",headers="Accept=application/json")
+
+	@GetMapping(value = "/name", headers = "Accept=application/json")
 	public String name() {
 		System.out.println("dfghj");
 		return "sagar";
 	}
-	@GetMapping(value="/param/{name}",headers="Accept=application/json")
+
+	@GetMapping(value = "/param/{name}", headers = "Accept=application/json")
 	public String param(@PathVariable String name) {
-		
+
 		return name;
 	}
-	
+
 }

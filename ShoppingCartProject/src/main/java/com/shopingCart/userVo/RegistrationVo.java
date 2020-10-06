@@ -16,6 +16,7 @@ public class RegistrationVo extends BaseResponce<Object> {
 	private long userId;
 	private String name;
 	private String address;
+	
 	private String contactNumber;
 	private String password;
 	private String confirmPassword;

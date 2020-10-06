@@ -11,9 +11,7 @@ import com.superAdmin.productVo.ProductPriceDetails;
 public class ProductPriceService {
 	@Autowired
 	RestTemplate getRestTemplate;
-	
-	
-	
+
 	// get price for product
 	@HystrixCommand(fallbackMethod = "getPricedetailsFallback")
 	public ProductPriceDetails getPricedetails(String name) {
@@ -31,6 +29,5 @@ public class ProductPriceService {
 
 		return productPriceDetails;
 	}
-
 
 }

@@ -35,6 +35,7 @@ public class UserService {
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
+				
 				// RegistrationVo regis =
 				// userDao.getUserRegistrationByEmail(registration.getEmail());
 				// if (regis == null) {

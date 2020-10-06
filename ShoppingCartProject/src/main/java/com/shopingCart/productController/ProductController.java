@@ -36,10 +36,9 @@ public class ProductController {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 		return baseResponce;
 	}
-	
 
 	@GetMapping(value = "/viewallproduct", headers = "Accept=application/json")
 	public ProductList viewAllProduct() {

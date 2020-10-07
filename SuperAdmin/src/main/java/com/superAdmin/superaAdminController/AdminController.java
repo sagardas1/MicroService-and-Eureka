@@ -25,6 +25,7 @@ public class AdminController {
 		return productList;
 	}
 	
+	
 
 	@GetMapping(value = "/getName/{name}", headers = "Accept=application/json")
 	public String name(@PathVariable(value="name")String name) {

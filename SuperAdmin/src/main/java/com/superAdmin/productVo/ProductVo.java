@@ -21,6 +21,7 @@ public class ProductVo {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+	
 
 	public long getQuantity() {
 		return quantity;

@@ -21,4 +21,5 @@ public interface ProductPriceDetailsDao extends CrudRepository<ProductPriceDetai
 	@Query(value = "DELETE FROM productPriceDetails WHERE productName:name", nativeQuery = true)
 	ProductPriceDetails deleteProduct(String name);
 
+	
 }

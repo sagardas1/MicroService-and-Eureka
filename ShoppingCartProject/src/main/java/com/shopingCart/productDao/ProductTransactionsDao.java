@@ -18,4 +18,5 @@ public interface ProductTransactionsDao extends CrudRepository<ProductTransactio
 	@Query(value = "select * from productTransactions", nativeQuery = true)
 	public List<ProductTransactions> getAll();
 
+	
 }

@@ -7,7 +7,6 @@ public class OtherServiceImpli implements MyService{
 
 	@Override
 	public String getName(String name) {
-		// TODO Auto-generated method stub
 		return "otherServiceImpli";
 	}
 

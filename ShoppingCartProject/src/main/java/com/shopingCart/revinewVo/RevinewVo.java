@@ -12,7 +12,6 @@ public class RevinewVo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
 	private double amount;
 	private String email;
 

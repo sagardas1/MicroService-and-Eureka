@@ -23,7 +23,6 @@ public class MyController {
 		System.out.println("dfghj");
 		return myService1.getName("");
 	}
-
 	@GetMapping(value = "/name", headers = "Accept=application/json")
 	public String name() {
 		System.out.println("dfghj");

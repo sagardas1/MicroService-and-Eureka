@@ -7,6 +7,7 @@ public class OtherServiceImpli implements MyService{
 
 	@Override
 	public String getName(String name) {
+		
 		return "otherServiceImpli";
 	}
 

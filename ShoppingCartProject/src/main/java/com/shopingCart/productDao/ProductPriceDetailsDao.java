@@ -17,10 +17,8 @@ public interface ProductPriceDetailsDao extends CrudRepository<ProductPriceDetai
 	@Query(value = "select * from productPriceDetails where productName=:name", nativeQuery = true)
 	ProductPriceDetails getProductPrice(@Param("name") String name);
 
-	
 	@Transactional
 	@Query(value = "DELETE FROM productPriceDetails WHERE productName:name", nativeQuery = true)
 	ProductPriceDetails deleteProduct(String name);
 
-	
 }

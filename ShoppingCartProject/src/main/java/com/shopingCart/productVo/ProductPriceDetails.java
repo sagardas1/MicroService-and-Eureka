@@ -9,18 +9,34 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-@Data
-@Getter
-@Setter
+
+
 @Entity
-@Table(name="productPriceDetails")
+@Table(name = "productPriceDetails")
 public class ProductPriceDetails {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long productId;
-	
+
 	private String productName;
 	private double price;
-	
-	
+	public long getProductId() {
+		return productId;
+	}
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 }

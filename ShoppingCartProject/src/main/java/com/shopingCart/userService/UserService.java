@@ -35,18 +35,9 @@ public class UserService {
 
 		try {
 			if (registration.getPassword().equals(registration.getConfirmPassword())) {
-				
-				// RegistrationVo regis =
-				// userDao.getUserRegistrationByEmail(registration.getEmail());
-				// if (regis == null) {
-
-				// roleId=1//users
-				// roleId=2 ,admin
+		
 				registration.setRoleId(2);
 				userDao.save(registration);
-
-				// userDao.insertIntoLogin(registration.getEmail(), registration.getPassword());
-				// Integer.parseInt("");
 
 				baseResponce.setStatusCode(ResponceConstants.SUCCESS_CREATED);
 				baseResponce.setStatusMessage(ResponceConstants.SUCESS_MESSAGE);

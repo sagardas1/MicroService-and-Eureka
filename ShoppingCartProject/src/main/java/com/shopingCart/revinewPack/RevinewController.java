@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/revenue")
 public class RevinewController {
+	
 
 	@GetMapping(value = "/getrevenue")
 	public int getAllRevinew() {

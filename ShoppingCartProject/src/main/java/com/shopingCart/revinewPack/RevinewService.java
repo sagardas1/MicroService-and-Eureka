@@ -20,7 +20,6 @@ public class RevinewService {
 	public void updateRevinew() {
 		RevinewVo revinewVo = null;
 
-		System.out.println("crons-------------------->");
 		List<ProductTransactions> productTransactionsList = productTransactionsDao.getAll();
 
 		for (int i = 0; i < productTransactionsList.size(); i++) {

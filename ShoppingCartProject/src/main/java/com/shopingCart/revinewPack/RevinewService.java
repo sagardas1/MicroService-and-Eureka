@@ -13,6 +13,7 @@ import com.shopingCart.revinewVo.RevinewVo;
 public class RevinewService {
 
 	@Autowired
+	
 	public ProductTransactionsDao productTransactionsDao;
 	@Autowired
 	public RevinewDao revinewDao;

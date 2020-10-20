@@ -24,9 +24,7 @@ public class UserController {
 
 	@Autowired
 	public UserService userService;
-	
 
-	
 	@Transactional
 	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> userRegistration(@RequestBody RegistrationVo registration) {

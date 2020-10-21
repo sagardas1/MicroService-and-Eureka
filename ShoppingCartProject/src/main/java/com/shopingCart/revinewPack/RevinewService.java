@@ -20,6 +20,7 @@ public class RevinewService {
 
 	public void updateRevinew() {
 		RevinewVo revinewVo = null;
+		
 
 		List<ProductTransactions> productTransactionsList = productTransactionsDao.getAll();
 

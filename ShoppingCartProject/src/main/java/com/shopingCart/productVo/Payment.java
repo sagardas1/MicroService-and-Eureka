@@ -23,6 +23,7 @@ public class Payment {
 	public void setAmountPaid(double amountPaid) {
 		this.amountPaid = amountPaid;
 	}
+	
 	public double getAmountToBePaid() {
 		return amountToBePaid;
 	}

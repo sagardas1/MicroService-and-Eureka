@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "productTransactions")
 public class ProductTransactions {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;

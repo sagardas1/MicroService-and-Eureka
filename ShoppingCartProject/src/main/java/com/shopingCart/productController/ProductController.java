@@ -24,8 +24,7 @@ import com.shopingCart.userVo.UserBasket;
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
-	
-	
+
 	public ProductService productService;
 
 	@PostMapping(value = "/insertProduct", headers = "Accept=application/json")

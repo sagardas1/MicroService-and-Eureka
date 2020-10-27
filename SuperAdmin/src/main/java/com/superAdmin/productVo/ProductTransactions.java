@@ -14,4 +14,5 @@ public class ProductTransactions {
 	private double paymentStatus;
 	private String email;
 
+	
 }

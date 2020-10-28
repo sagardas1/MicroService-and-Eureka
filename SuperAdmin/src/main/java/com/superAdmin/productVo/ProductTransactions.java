@@ -9,6 +9,7 @@ public class ProductTransactions {
 
 	private long id;
 
+	
 	private double amountPaid;
 	private double finalAmount;
 	private double paymentStatus;

@@ -24,6 +24,7 @@ public class Payment {
 		this.amountPaid = amountPaid;
 	}
 	
+	
 	public double getAmountToBePaid() {
 		return amountToBePaid;
 	}

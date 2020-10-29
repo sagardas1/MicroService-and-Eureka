@@ -12,6 +12,7 @@ public class MathUtills {
 		} else
 			return b - a;
 	}
+	
 
 	public int multi(int a, int b) {
 		return a * b;

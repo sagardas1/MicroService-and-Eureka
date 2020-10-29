@@ -11,4 +11,5 @@ import com.shopingCart.revinewVo.RevinewVo;
 @Transactional
 public interface RevinewDao extends CrudRepository<RevinewVo, Long> {
 
+
 }

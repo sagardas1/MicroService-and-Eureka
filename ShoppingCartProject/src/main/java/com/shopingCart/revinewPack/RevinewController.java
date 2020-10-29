@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/revenue")
 public class RevinewController {
 
+	
 	@GetMapping(value = "/getrevenue")
 	public int getAllRevinew() {
 		return 10;

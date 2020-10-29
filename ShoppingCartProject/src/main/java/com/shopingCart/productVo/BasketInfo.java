@@ -6,7 +6,6 @@ import com.shopingCart.userVo.RegistrationVo;
 
 public class BasketInfo extends RegistrationVo {
 
-	
 	private List<ItemVo> itemList;
 	private double totalPrice;
 	private Payment payment;

@@ -13,7 +13,6 @@ public class ProductPriceDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long productId;
 
-	
 	private String productName;
 	private double price;
 

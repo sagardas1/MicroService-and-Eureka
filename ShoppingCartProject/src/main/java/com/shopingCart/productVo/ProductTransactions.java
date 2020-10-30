@@ -17,6 +17,7 @@ public class ProductTransactions {
 	private double finalAmount;
 	private double paymentStatus;
 
+	
 	public long getId() {
 		return id;
 	}

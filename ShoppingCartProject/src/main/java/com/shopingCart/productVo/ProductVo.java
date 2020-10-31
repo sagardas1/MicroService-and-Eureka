@@ -14,6 +14,7 @@ public class ProductVo {
 	private long productId;
 	private String productName;
 	private long quantity;
+	
 	public long getProductId() {
 		return productId;
 	}

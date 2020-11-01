@@ -18,6 +18,8 @@ public class ProductTransactions {
 	private double paymentStatus;
 
 	
+	
+	
 	public long getId() {
 		return id;
 	}

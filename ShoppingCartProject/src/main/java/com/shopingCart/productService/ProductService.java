@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.shopingCart.baseResponce.BaseResponce;
@@ -25,7 +26,7 @@ import com.shopingCart.responceConstants.ResponceConstants;
 import com.shopingCart.userDao.UserBasketDao;
 import com.shopingCart.userDao.UserDoa;
 import com.shopingCart.userVo.UserBasket;
-
+@Scope(value="prototype")
 @Service
 public class ProductService {
 

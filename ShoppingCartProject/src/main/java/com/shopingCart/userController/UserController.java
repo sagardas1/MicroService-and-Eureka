@@ -37,6 +37,7 @@ public class UserController {
 	}
 	
 	
+	
 
 	@PostMapping(value = "/updateuserregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> updateUserRegistration(@RequestBody RegistrationVo registration) {

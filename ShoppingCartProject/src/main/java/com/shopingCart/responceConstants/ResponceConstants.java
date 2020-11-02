@@ -21,6 +21,7 @@ public class ResponceConstants {
 	public static final String PAYMENT_SUCCESSFULL = "Payment Successfull";
 	public static final String PAYMENT_FAILED = "Payment Failed";
 
+	
 	// payment status
 	public static final int PAID = 1;
 	public static final int NOT_PAID = 0;

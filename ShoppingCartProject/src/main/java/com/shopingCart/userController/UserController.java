@@ -35,6 +35,8 @@ public class UserController {
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
+	
+	
 
 	@PostMapping(value = "/updateuserregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> updateUserRegistration(@RequestBody RegistrationVo registration) {

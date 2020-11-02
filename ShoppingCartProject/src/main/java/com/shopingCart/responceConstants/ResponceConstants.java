@@ -9,6 +9,7 @@ public class ResponceConstants {
 	public static final int STATUS404 = 404;
 	public static final int FAILED = 405;
 
+	
 	// FOR RESPONSE MESSAGE
 	public static final String SUCESS_MESSAGE = "Success";
 	public static final String DELETE_MESSAGE = "deleted";

@@ -19,6 +19,7 @@ public interface LoginDAO extends CrudRepository<LoginVo, Long> {
 	LoginVo findUserLogin(@Param("email") String email, @Param("password") String password);
 
 	
+	
 	@Transactional
 	@Query(value = "select * from login where email = :email", nativeQuery = true)
 	LoginVo findUser(@Param("email") String email);

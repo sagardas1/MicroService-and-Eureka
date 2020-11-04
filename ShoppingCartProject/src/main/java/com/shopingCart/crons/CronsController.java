@@ -15,16 +15,15 @@ public class CronsController {
 	@Autowired
 	RevinewService revinewService;
 
-	
-	@Scheduled(cron="*/5 * * * * ?")
+	@Scheduled(cron = "*/5 * * * * ?")
 	public void saveReportsGenerate() {
 		revinewService.updateRevinew();
 	}
-	//every one mins
-	//@Scheduled(cron="*/1 * * * * ?")
+
+	// every one mins
+	// @Scheduled(cron="*/1 * * * * ?")
 	public void saveReportsGenerate1() {
 		revinewService.updateRevinew();
 	}
-	
 
 }

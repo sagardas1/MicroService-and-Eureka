@@ -6,6 +6,8 @@ public class ShoppingCartExceptions extends RuntimeException {
 	
 	ShoppingCartExceptions() {
 		super("exception");
+		
+		
 	}
 
 }

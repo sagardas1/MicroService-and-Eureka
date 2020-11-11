@@ -27,6 +27,8 @@ public class ProductController {
 
 	public ProductService productService;
 
+	
+	
 	@PostMapping(value = "/insertProduct", headers = "Accept=application/json")
 	public BaseResponce<Void> insertProduct(@RequestBody ProductVo productVo) {
 

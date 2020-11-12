@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class RevinewController {
 
 	
+	
+	
 	@GetMapping(value = "/getrevenue")
 	public int getAllRevinew() {
 		return 10;

@@ -15,7 +15,7 @@ import com.shopingCart.userVo.UserBasket;
 @Repository
 @Transactional
 public interface UserBasketDao extends CrudRepository<UserBasket, Long> {
-
+//.gtfybhgybybyby
 
 	@Transactional
 	@Query(value = "select * from userbasket where productName = :productName AND email = :email", nativeQuery = true)

@@ -7,5 +7,7 @@ public class MessageConstant {
 	public static final String LINK_FOR_WHATSAPP_UPDATE = "https://signupforservices.com/whatsapp/"
 			+ "optin/?bId=910ed2d2-433d-41c9-bcff-58547b8cf98d&bName=DemoHealthSignz&s=URL&lang=en_US";
 	public static final String OTP_MESSAGE_SUBJECT = "OTP for login. ";
+	
+	
 
 }

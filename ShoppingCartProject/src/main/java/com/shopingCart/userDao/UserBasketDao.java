@@ -27,6 +27,8 @@ public interface UserBasketDao extends CrudRepository<UserBasket, Long> {
 	public int updateUserBasket(@Param("productName")String productName, @Param("quantity")long quantity,@Param("email")String email);
 
 	
+	
+	
 	@Transactional
 	@Query(value = "select * from userbasket where email = :email", nativeQuery = true)
 	public List<UserBasket> getUserBasketList(String email);

@@ -12,6 +12,8 @@ import lombok.Setter;
 public class ProductList {
 
 	
+	
+	
 	public List<ProductVo> productList;
 
 }

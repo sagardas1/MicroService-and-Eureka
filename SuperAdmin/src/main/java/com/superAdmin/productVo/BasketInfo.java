@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BasketInfo extends RegistrationVo {
+	
+	
 	private List<ItemVo> itemList;
 	private double totalPrice;
 	private Payment payment;

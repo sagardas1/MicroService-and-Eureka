@@ -7,6 +7,8 @@ public class BaseResponce<T> {
 	private long statusCode;
 	private long timeStamp;
 
+	
+	
 	public String getStatusMessage() {
 		return statusMessage;
 	}

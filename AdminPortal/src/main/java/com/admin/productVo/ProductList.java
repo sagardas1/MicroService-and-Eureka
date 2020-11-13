@@ -2,15 +2,15 @@ package com.admin.productVo;
 
 import java.util.List;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-@Data
-@Getter
-@Setter
 public class ProductList {
 	
 	public List<ProductVo> productList;
+
+	public void setProductList(List<ProductVo> product) {
+		// TODO Auto-generated method stub
+		
+		
+	}
 
 
 

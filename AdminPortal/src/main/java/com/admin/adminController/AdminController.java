@@ -33,6 +33,7 @@ public class AdminController {
 		
 		return registrationBulk;
 		
+		
 	}
 	@ResponseBody
 	@GetMapping(value="/allProduct",headers="Accept=application/json")

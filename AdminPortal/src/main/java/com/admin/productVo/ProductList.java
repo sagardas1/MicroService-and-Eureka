@@ -9,7 +9,6 @@ public class ProductList {
 	public void setProductList(List<ProductVo> product) {
 		
 		
-		// TODO Auto-generated method stub
 
 
 		

@@ -4,9 +4,6 @@ import java.util.List;
 
 import com.admin.userVo.RegistrationVo;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 public class BasketInfo extends RegistrationVo{
 private	List<ItemVo> itemList;

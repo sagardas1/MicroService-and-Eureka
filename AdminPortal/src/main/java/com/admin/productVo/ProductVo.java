@@ -6,12 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-@Data
-@Getter
-@Setter
+
 @Entity
 @Table(name="productBaseDate")
 public class ProductVo {
@@ -20,5 +15,23 @@ public class ProductVo {
 	private long productId;
 	private String productName;
 	private long quantity;
+	public long getProductId() {
+		return productId;
+	}
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public long getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(long quantity) {
+		this.quantity = quantity;
+	}
 	
 }

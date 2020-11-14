@@ -7,16 +7,7 @@ public class ProductList {
 	public List<ProductVo> productList;
 
 	public void setProductList(List<ProductVo> product) {
-		
-		
-		
-		
-		
 
-
-		
-		
-		
 	}
 
 }

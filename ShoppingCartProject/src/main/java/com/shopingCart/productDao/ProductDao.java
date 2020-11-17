@@ -21,6 +21,8 @@ public interface ProductDao extends CrudRepository<ProductVo, Long> {
 	@Query(value = "select * from productBaseDate where productName=:productName", nativeQuery = true)
 	ProductVo getproductFromdb(@Param("productName") String productName);
 
+	
+	
 	@Modifying
 	@Transactional
 	@Query(value = "update productBaseDate set quantity=:quantity "

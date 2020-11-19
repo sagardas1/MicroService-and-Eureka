@@ -15,14 +15,11 @@ import com.shopingCart.productVo.ProductVo;
 @Repository
 @Transactional
 public interface ProductDao extends CrudRepository<ProductVo, Long> {
-	
 
 	@Transactional
 	@Query(value = "select * from productBaseDate where productName=:productName", nativeQuery = true)
 	ProductVo getproductFromdb(@Param("productName") String productName);
 
-	
-	
 	@Modifying
 	@Transactional
 	@Query(value = "update productBaseDate set quantity=:quantity "

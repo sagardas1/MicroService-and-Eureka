@@ -1,5 +1,6 @@
 package com.admin.adminController;
 
+import java.util.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,9 @@ public class AdminController {
 	@ResponseBody
 	@DeleteMapping(value="/deleteUser",headers="Accept=application/json")
 	public BaseResponce<Void> deleteUser(@RequestBody RegistrationVo registrationVo){
+		
+		
+		Map<String ,Integer> map1=new HashMap<String ,Integer>();
 		@SuppressWarnings("unused")
 		BaseResponce<Void> baseResponce=adminService.deleteUser(registrationVo);
 		baseResponce.setTimeStamp(System.currentTimeMillis());

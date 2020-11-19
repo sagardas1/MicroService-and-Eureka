@@ -1,5 +1,6 @@
 package com.shopingCart.userController;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +18,7 @@ import com.shopingCart.userService.UserService;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
 
+
 @SuppressWarnings("unused")
 @RestController
 @RequestMapping("/user")
@@ -24,9 +26,20 @@ public class UserController {
 
 	@Autowired
 	public UserService userService;
-	
+	@Autowired
+	private ModelMapper mapper;
 	
 
+	@Transactional
+	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
+	public BaseResponce<Void> userRegistration1(@RequestBody Object registration) {
+		BaseResponce<Void> baseResponce = null;
+		RegistrationVo registrationVo =mapper.map(registration, RegistrationVo.class);
+		
+		//baseResponce = userService.userRegistration(registration);
+		baseResponce.setTimeStamp(System.currentTimeMillis());
+		return baseResponce;
+	}
 	
 	
 	

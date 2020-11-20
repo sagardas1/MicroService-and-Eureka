@@ -36,6 +36,7 @@ public class AdminController {
 		
 		
 	}
+	
 	@ResponseBody
 	@GetMapping(value="/allProduct",headers="Accept=application/json")
 	public ProductList allProduct(){

@@ -20,6 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class ShoppingCartProjectApplication {
 	
 	@Bean
+	
 	 public ModelMapper maper() {
 		 return new ModelMapper();
 	 }

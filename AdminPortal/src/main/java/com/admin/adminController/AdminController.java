@@ -82,6 +82,7 @@ public class AdminController {
 		System.out.println(name);
 		return name;
 	}
+	
 
 	@ResponseBody
 	@GetMapping(value="/deleteproduct",headers="Accept=application/json")

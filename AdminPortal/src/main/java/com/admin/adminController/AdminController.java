@@ -75,6 +75,8 @@ public class AdminController {
 		return productList;}
 	
 	
+	
+	
 	@GetMapping(value="/{name}")
 	public String getLastName(@PathVariable String name){
 		System.out.println(name);

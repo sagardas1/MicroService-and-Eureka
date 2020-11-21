@@ -63,6 +63,7 @@ public class UserController {
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
+	
 
 	@GetMapping(value = "/login", headers = "Accept=application/json")
 	public BaseResponce<Void> login(@RequestParam String email, @RequestParam String password) {

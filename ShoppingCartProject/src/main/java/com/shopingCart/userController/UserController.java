@@ -18,7 +18,6 @@ import com.shopingCart.userService.UserService;
 import com.shopingCart.userVo.RegistrationBulk;
 import com.shopingCart.userVo.RegistrationVo;
 
-
 @SuppressWarnings("unused")
 @RestController
 @RequestMapping("/user")
@@ -28,27 +27,19 @@ public class UserController {
 	public UserService userService;
 	@Autowired
 	private ModelMapper mapper;
-	
 
 	@Transactional
 	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> userRegistration1(@RequestBody Object registration) {
 		BaseResponce<Void> baseResponce = null;
-		RegistrationVo registrationVo =mapper.map(registration, RegistrationVo.class);
-		
-		//baseResponce = userService.userRegistration(registration);
+		RegistrationVo registrationVo = mapper.map(registration, RegistrationVo.class);
+
+		// baseResponce = userService.userRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Transactional
 	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> userRegistration(@RequestBody RegistrationVo registration) {
@@ -58,9 +49,6 @@ public class UserController {
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	
-	
-	
 
 	@PostMapping(value = "/updateuserregistration", headers = "Accept=application/json")
 	public BaseResponce<Void> updateUserRegistration(@RequestBody RegistrationVo registration) {

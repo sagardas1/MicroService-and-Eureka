@@ -44,6 +44,7 @@ public class AdminController {
 		return productList;
 
 	}
+	
 
 	@ResponseBody
 	@PostMapping(value = "/insertProduct", headers = "Accept=application/json")

@@ -53,6 +53,8 @@ public class ProductService {
 		query.getResultList();
 
 		
+		
+		
 		BaseResponce<Void> baseResponce = new BaseResponce<Void>();
 		ProductVo pro = productDao.getproductFromdb(productVo.getProductName());
 		if (pro != null) {

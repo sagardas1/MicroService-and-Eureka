@@ -18,6 +18,8 @@ public class MyController {
 	@Autowired
 	private MyService myService1;
 
+	
+	
 	@GetMapping(value = "/getname", headers = "Accept=application/json")
 	public String getName() {
 		System.out.println("dfghj");

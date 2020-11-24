@@ -13,6 +13,9 @@ public class MyServiceImpli implements MyService {
 	
 	
 	
+	
+	
+	
 	public String getName(String name) {
 		return "myServiceImpli";
 	}

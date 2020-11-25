@@ -34,6 +34,7 @@ public class UserController {
 		BaseResponce<Void> baseResponce = null;
 		RegistrationVo registrationVo = mapper.map(registration, RegistrationVo.class);
 
+		
 		// baseResponce = userService.userRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;

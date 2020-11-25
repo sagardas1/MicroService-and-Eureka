@@ -33,7 +33,7 @@ public class UserController {
 	public BaseResponce<Void> userRegistration1(@RequestBody Object registration) {
 		BaseResponce<Void> baseResponce = null;
 		RegistrationVo registrationVo = mapper.map(registration, RegistrationVo.class);
-String a="";
+
 		// baseResponce = userService.userRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;

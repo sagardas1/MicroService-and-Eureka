@@ -9,13 +9,6 @@ public class MyServiceImpli implements MyService {
 	@Autowired
 	private Reposi reposi;
 
-	
-	
-	
-	
-	
-	
-	
 	public String getName(String name) {
 		return "myServiceImpli";
 	}

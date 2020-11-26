@@ -5,16 +5,10 @@ import java.util.List;
 import com.admin.userVo.RegistrationVo;
 
 public class BasketInfo extends RegistrationVo {
-	
-	
-	
-	
+
 	private List<ItemVo> itemList;
 	private double totalPrice;
 	private Payment payment;
-	
-	
-	
 
 	public List<ItemVo> getItemList() {
 		return itemList;

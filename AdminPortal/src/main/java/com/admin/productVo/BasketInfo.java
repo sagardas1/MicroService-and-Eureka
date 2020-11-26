@@ -11,6 +11,8 @@ public class BasketInfo extends RegistrationVo {
 	private double totalPrice;
 	private Payment payment;
 	
+	
+	
 
 	public List<ItemVo> getItemList() {
 		return itemList;

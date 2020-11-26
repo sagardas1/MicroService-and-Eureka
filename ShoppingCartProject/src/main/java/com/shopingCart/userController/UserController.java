@@ -34,17 +34,10 @@ public class UserController {
 		BaseResponce<Void> baseResponce = null;
 		RegistrationVo registrationVo = mapper.map(registration, RegistrationVo.class);
 
-		
 		// baseResponce = userService.userRegistration(registration);
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	
-	
-	
-	
-	
-	
 
 	@Transactional
 	@PostMapping(value = "/userregistration", headers = "Accept=application/json")
@@ -64,7 +57,6 @@ public class UserController {
 		baseResponce.setTimeStamp(System.currentTimeMillis());
 		return baseResponce;
 	}
-	
 
 	@GetMapping(value = "/login", headers = "Accept=application/json")
 	public BaseResponce<Void> login(@RequestParam String email, @RequestParam String password) {

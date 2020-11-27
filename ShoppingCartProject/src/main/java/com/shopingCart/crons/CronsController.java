@@ -19,11 +19,8 @@ public class CronsController {
 	public void saveReportsGenerate() {
 		revinewService.updateRevinew();
 	}
-	
+
 	//
-	
-	
-	
 
 	// every one mins
 	// @Scheduled(cron="*/1 * * * * ?")

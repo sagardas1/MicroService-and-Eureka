@@ -22,6 +22,8 @@ public class CronsController {
 
 	
 	//
+	
+	
 
 	// every one mins
 	// @Scheduled(cron="*/1 * * * * ?")

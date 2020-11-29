@@ -20,6 +20,7 @@ public class CronsController {
 		revinewService.updateRevinew();
 	}
 
+	
 	//
 
 	// every one mins

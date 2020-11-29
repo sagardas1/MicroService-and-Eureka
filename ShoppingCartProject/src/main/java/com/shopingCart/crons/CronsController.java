@@ -19,6 +19,8 @@ public class CronsController {
 	public void saveReportsGenerate() {
 		revinewService.updateRevinew();
 	}
+	
+	
 
 	
 	

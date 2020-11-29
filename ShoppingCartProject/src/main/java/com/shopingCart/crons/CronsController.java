@@ -20,13 +20,7 @@ public class CronsController {
 		revinewService.updateRevinew();
 	}
 
-	
-	
-	
 	//
-	
-	
-	
 
 	// every one mins
 	// @Scheduled(cron="*/1 * * * * ?")

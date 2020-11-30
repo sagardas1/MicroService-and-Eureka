@@ -14,6 +14,7 @@ import com.shopingCart.revinewPack.RevinewService;
 public class CronsController {
 	@Autowired
 	RevinewService revinewService;
+	
 
 	@Scheduled(cron = "*/5 * * * * ?")
 	public void saveReportsGenerate() {

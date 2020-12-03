@@ -19,6 +19,7 @@ public class CronsController {
 	@Scheduled(cron = "*/5 * * * * ?")
 	public void saveReportsGenerate() {
 		revinewService.updateRevinew();
+		
 	}
 	
 	
